@@ -1,0 +1,36 @@
+<section>
+    <div class="promotion">
+        {{#each promotion}}
+        <div>
+        <img src="{{this.img}}" alt="" width="100px">
+        </div>
+        {{/each}}
+
+    </div>
+
+    <div class="categories">
+        {{#each category}}
+            <div>
+                <div>
+                    {{this.description}}
+                </div>
+                <div>
+                    <img src="{{this.img}}" alt="" width="100px">
+                    
+                </div>    
+            </div>
+        {{/each}}
+    </div>
+
+    <div>Best Sellers <span>See more</span></div>
+
+    <div class="bsSeller">
+        {{#each bsProduct}}
+            <div>
+                <div>
+                    <img src="{{this.img}}" alt="" width="100px">
+                </div>
+            </div>
+        {{/each}}
+    </div>
+</section>

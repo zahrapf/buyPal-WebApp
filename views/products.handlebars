@@ -1,0 +1,39 @@
+<nav>
+  <!--  {{#each category}}
+        <div>
+            {{this.description}}
+        </div>
+    {{/each}}
+    -->
+
+    <div>Electronics & Accessories</div>
+    
+    <div>
+        <ul>
+            <li><a href="">Accessories & Supplies</a></li>
+            <li><a href="">Camera, Photo & Video</a></li>
+            <li><a href="">Computers & Accessories</a></li>
+            <li><a href="">Headphones</a></li>
+
+        </ul>
+    </div>
+    {{#each product}}
+        <div>
+            <div>
+                <img src="{{this.img}}" alt="" width="100px">
+            </div>
+            <div>
+                {{this.title}}
+            </div>
+            <div>
+                {{this.price}}
+            </div>
+            <div>
+                {{this.category}}
+            </div>
+            <div>
+                {{this.bs}}
+            </div>
+        </div>
+    {{/each}}
+</nav>
