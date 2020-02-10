@@ -1,39 +1,43 @@
-<nav>
+<section class="products">
   <!--  {{#each category}}
         <div>
             {{this.description}}
         </div>
     {{/each}}
     -->
+    <div class="product-nav">
+        <h1>Electronics & Accessories</h1>
+        
+        <nav>
+            <div>
+                <p><a href="">Accessories & Supplies</a></p>
+                <p><a href="">Camera, Photo & Video</a></p>
+                <p><a href="">Computers & Accessories</a></p>
+                <p><a href="">Headphones</a></li>
 
-    <div>Electronics & Accessories</div>
-    
-    <div>
-        <ul>
-            <li><a href="">Accessories & Supplies</a></li>
-            <li><a href="">Camera, Photo & Video</a></li>
-            <li><a href="">Computers & Accessories</a></li>
-            <li><a href="">Headphones</a></li>
-
-        </ul>
+            </div>
+        </nav>
     </div>
-    {{#each product}}
-        <div>
+
+    <div class="pro-products">
+        {{#each product}}
             <div>
-                <img src="{{this.img}}" alt="" width="100px">
+                <div>
+                    <img src="{{this.img}}" alt="" width="200px" height="200px">
+                </div>
+                <div>
+                    {{this.title}}
+                </div>
+                <div>
+                    {{this.price}}
+                </div>
+                <div>
+                    {{this.category}}
+                </div>
+                <div>
+                    {{this.bs}}
+                </div>
             </div>
-            <div>
-                {{this.title}}
-            </div>
-            <div>
-                {{this.price}}
-            </div>
-            <div>
-                {{this.category}}
-            </div>
-            <div>
-                {{this.bs}}
-            </div>
-        </div>
-    {{/each}}
-</nav>
+        {{/each}}
+    </div>
+</section>

@@ -1,36 +1,43 @@
 <section>
     <div class="promotion">
-        {{#each promotion}}
-        <div>
-        <img src="{{this.img}}" alt="" width="100px">
+        <span>Promotions</span>
+        <div class="promotion-pro">
+            {{#each promotion}}
+            <div class="pro">
+                <img src="{{this.img}}" alt="" width="200px" height="200px">
+            <p>Ckeck Now!</p>
+            </div>
+            
+            {{/each}}
         </div>
-        {{/each}}
-
+        {{!-- <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a> --}}
     </div>
 
     <div class="categories">
         {{#each category}}
-            <div>
-                <div>
+            <div class="category">
+                <div class="des">
                     {{this.description}}
                 </div>
                 <div>
-                    <img src="{{this.img}}" alt="" width="100px">
+                    <img src="{{this.img}}" alt="" width="200px" height="200px">
                     
-                </div>    
+                </div>  
+                <div>See more</div>  
             </div>
         {{/each}}
     </div>
 
-    <div>Best Sellers <span>See more</span></div>
-
-    <div class="bsSeller">
-        {{#each bsProduct}}
-            <div>
+    <div class="bestSeller">
+        <div>Best Sellers <span>See more</span></div>
+        <div class="bsSeller">
+            {{#each bsProduct}}
                 <div>
-                    <img src="{{this.img}}" alt="" width="100px">
+                    <img src="{{this.img}}" alt="" width="200px" height="200px">
                 </div>
-            </div>
-        {{/each}}
+            {{/each}}
+        </div>
+
     </div>
 </section>

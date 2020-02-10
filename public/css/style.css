@@ -2,33 +2,232 @@
     padding: 0;
     margin: 0;
 }
+html{
+    overflow-x: hidden;
+}
 header{
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    flex-direction: row;
     width: 100%;
     height: 130px; 
     background-color: red;
 }
-.promotion{
-    display: flex;
-    flex-direction: row;
-    height: 250px;
-    background-color: aqua;
+h1{
+    padding-top: 20px;
+    padding-left: 20px;
 }
-.categories{
-    display: flex;
-    flex-direction: row;
+nav > ul{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+nav > ul > li {
+    text-decoration: none;
+    padding-top: 30px;
+}
+nav > ul > li > a{
+    text-decoration: none;
+}
+.promotion{
+    margin: 20px;
+    margin-top: 30px;
+    padding-left: 30px;
+    height: 360px;
+    background-color: aqua;
+    border-top: 5px solid black;
+}
+.promotion-pro{
+    grid-template-columns: 20% 20% 20% 20%;
+    grid-column-gap: 2em;
+    padding: 10px;
+    display: grid;
     height: 250px;
+    
+    
+} 
+/*.promotion-pro{
+    position: relative;
+}
+.mySlides {
+    display: none;
+  } */
+.pro{
+    margin-top: 20px;
+    padding-top: 30px;
+    padding-left: 30px;
+    height: 250px;
+    background-color: darkgray;
+}
+ /* .prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}  */
+.categories{
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20%;
+    grid-column-gap: 2em;
+    height: 360px;
     background-color: orange;
+    border-top: 5px solid black;
+    margin: 20px;
+    margin-top: 30px;
+    padding-left: 40px;
+}
+.category{
+    margin-top: 40px;
+    height: 280px;
+    background-color: darkgray;
+}
+.category div{
+    margin: 5px;
+    padding-left: 30px;
+}
+.category .des{
+    padding-top: 10px;
+}
+.bestSeller{
+    background-color: olive;
+    border-top: 5px solid black;
+    height: 250px;
+    margin: 20px;
+    margin-top: 30px;
 }
 .bsSeller{
-    display: flex;
-    flex-direction: row;
-    height: 250px;
-    background-color: olive;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    height: 200px;
+} 
+.bsSeller div{
+    margin-top: 10px;
+    background-color: darkgray;
 }
 footer{
+    padding-top: 50px;
+    padding-left: 300px;
     background-color: palevioletred;
-    display: flex;
-    flex-flow: row;
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
     height: 200px;
+} 
+.products{
+    display: grid;
+    grid-template-columns: 1fr 4fr;
 }
+.product-nav{
+    margin-top: 30px;
+    margin-left: 5px;
+}
+.product-nav > nav > div{
+    margin-top: 5px;
+    margin-left: 30px;
+}
+.product-nav > nav > div > p {
+    padding: 5px;
+    
+}
+.product-nav > nav > div > p > a{
+    text-decoration: none;
+}
+.product-nav > nav > div > p > a:hover{
+    cursor: pointer;
+    font-weight: bold;
+}
+.pro-products{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 30px;
+}
+.register-form{
+    border: 1px solid black;
+    height: 450px;
+    width: 380px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: 500px;
+    padding-top: 40px;
+    padding-left: 15px;
+}
+.register{
+    margin-bottom: 15px;
+}
+.register-form div{
+    padding-top: 10px;
+    padding-left: 13px;
+}
+#reg-log{
+    margin-left: 10px;
+    width: 300px;
+    margin-top: 20px;
+    border-top: 1px solid black;
+}
+.register legend{
+    padding-left: 20px;
+    padding-bottom: 30px;
+}
+.register label{
+    padding: 10px;
+}
+.register input{
+    margin-left: 13px;
+    padding: 3px;
+    width: 200px;
+}
+.register p{
+    padding: 12px;
+}
+.login{
+    border: 1px solid black;
+    height: 250px;
+    width: 380px;
+    margin-top: 45px;
+    margin-bottom: 30px;
+    margin-left: 500px;
+    padding-top: 30px;
+    padding-left: 15px;
+}
+.login label,input{
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+.login legend{
+    margin-left: 35px;
+    margin-bottom: 10px;
+
+}
+.login p {
+    margin-left: 25px;
+    margin-bottom: 15px;
+}
+.login div{
+    margin-top: 20px;
+    margin-left: 20px;
+}
+#log-reg{
+    border-top: 1px solid black;
+    width: 370px;
+    margin-left: 510px;
+    text-align: center;
+    padding-top: 10px;
+    margin-bottom: 20px;
+}
+
+
