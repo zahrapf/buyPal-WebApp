@@ -45,20 +45,20 @@ nav > ul > li > a{
     
     
 } 
-/*.promotion-pro{
+/* .promotion-pro{
     position: relative;
-}
-.mySlides {
+} */
+/* .pro {
     display: none;
-  } */
+  }  */
 .pro{
     margin-top: 20px;
     padding-top: 30px;
     padding-left: 30px;
     height: 250px;
     background-color: darkgray;
-}
- /* .prev,
+} 
+  .prev,
 .next {
   cursor: pointer;
   position: absolute;
@@ -80,7 +80,7 @@ nav > ul > li > a{
 .prev:hover,
 .next:hover {
     background-color: rgba(0, 0, 0, 0.8);
-}  */
+}  
 .categories{
     display: grid;
     grid-template-columns: 20% 20% 20% 20%;
@@ -174,10 +174,15 @@ footer{
     padding-left: 13px;
 }
 #reg-log{
-    margin-left: 10px;
+    text-align: center;
+    margin-left: 540px;
+    margin-bottom: 30px;
+    padding-top: 10px;
+    padding-left: 20px;
     width: 300px;
-    margin-top: 20px;
+    /* margin-top: 80px; */
     border-top: 1px solid black;
+    
 }
 .register legend{
     padding-left: 20px;
