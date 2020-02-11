@@ -1,17 +1,13 @@
 <section>
     <div class="promotion">
-        <span>Promotions</span>
         <div class="promotion-pro">
             {{#each promotion}}
-            <div class="pro">
-                <img src="{{this.img}}" alt="" width="200px" height="200px">
-                <p>Ckeck Now!</p>
-            </div>
+            
+                <img src="{{this.img}}" alt="">
             
             {{/each}}
         </div>
-        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-        <a class="next" onclick="plusSlides(1)">&#10095;</a> 
+
     </div>
 
     <div class="categories">
@@ -21,20 +17,20 @@
                     {{this.description}}
                 </div>
                 <div>
-                    <img src="{{this.img}}" alt="" width="200px" height="200px">
+                    <img src="{{this.img}}" alt="" width="250px" height="300px">
                     
                 </div>  
-                <div>See more</div>  
+                <div><a href=" ">See more</a></div>  
             </div>
         {{/each}}
     </div>
 
     <div class="bestSeller">
-        <div>Best Sellers <span>See more</span></div>
+        <p>Best Sellers <span><a href=" ">See more</a></span></p>
         <div class="bsSeller">
             {{#each bsProduct}}
                 <div>
-                    <img src="{{this.img}}" alt="" width="200px" height="200px">
+                    <img src="{{this.img}}" alt="" width="250px" height="200px">
                 </div>
             {{/each}}
         </div>

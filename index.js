@@ -39,8 +39,21 @@ app.get("/registration", (req,res)=>{
         headingInfo: "Amazon"
     });
 });
+app.post("/registration", (req,res)=>{
+    res.render("register", {
+        title: "Register: ZARA.ca",
+        headingInfo: "Amazon"
+    });
+});
 
 app.get("/login", (req,res)=>{
+    res.render("login", {
+        title: "login: ZARA.ca",
+        headingInfo: "Amazon"
+    });
+});
+
+app.post("/login", (req,res)=>{
     res.render("login", {
         title: "login: ZARA.ca",
         headingInfo: "Amazon"

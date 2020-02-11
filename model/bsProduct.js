@@ -5,20 +5,25 @@ const bsProduct=
     init()
     {
         this.bsProductArr.push({
-            img: '/img/the-honest-company.jpg'
+            img: '/img/facewash.jpg'
         });
 
         this.bsProductArr.push({
-            img: '/img/electronic.jpg'
+            img: '/img/glass.jpg'
         });
 
         this.bsProductArr.push({
-            img: '/img/clothes.jpg'
+            img: '/img/bag.jpg'
         });
 
         this.bsProductArr.push({
-            img: '/img/home.jpg'
+            img: '/img/pillow.jpg'
         });
+
+        this.bsProductArr.push({
+            img: '/img/lipstick.jpg'
+        });
+
     },
 
     getAllbsProduct()

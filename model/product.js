@@ -5,51 +5,51 @@ const product=
     init()
     {
         this.productArr.push({
-            img: '/img/the-honest-company.jpg',
-            title: 'abc',
-            price: '1234',
+            img: '/img/macbook.jpg',
+            title: 'MacBook',
+            price: 'Starts from $1200',
             category: 'electronoc',
-            bs: 'best'
+            bestSeller: false
         });
 
         this.productArr.push({
-            img: '/img/electronic.jpg',
-            title: 'abc',
-            price: '1234',
+            img: '/img/headphone.jpg',
+            title: 'Sony Headphone',
+            price: '$50',
             category: 'electronoc',
-            bs: 'best'
+            bestSeller: true
         });
 
         this.productArr.push({
-            img: '/img/clothes.jpg',
-            title: 'abc',
-            price: '1234',
+            img: '/img/mouse.jpg',
+            title: 'Apple Mouse',
+            price: '$110',
             category: 'electronoc',
-            bs: 'best'
+            bestSeller: true
         });
 
         this.productArr.push({
-            img: '/img/home.jpg',
-            title: 'abc',
-            price: '1234',
+            img: '/img/airpod.jpg',
+            title: 'Apple Airpod',
+            price: '$120',
             category: 'electronoc',
-            bs: 'best'
+            bestSeller: false
         });
 
         this.productArr.push({
-            img: '/img/home.jpg',
+            img: '/img/remoteControl.jpg',
             title: 'abc',
-            price: '1234',
+            price: '$35',
             category: 'electronoc',
-            bs: 'best'
+            bestSeller: true
         });
 
         this.productArr.push({
-            img: '/img/home.jpg',
-            title: 'abc',
-            price: '1234',
+            img: '/img/iphone.jpg',
+            title: 'Apple iphone',
+            price: 'Starts from $900',
             category: 'electronoc',
-            bs: 'best'
+            bestSeller: false
         });
     },
 

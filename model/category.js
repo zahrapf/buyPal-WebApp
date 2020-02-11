@@ -15,13 +15,13 @@ const category=
         });
 
         this.categoryArr.push({
-            description: 'Clothes, Showes and Jewelry',
+            description: 'Clothes and Showes',
             img: '/img/clothes.jpg'
         });
 
         this.categoryArr.push({
             description: 'Home and Kitchen',
-            img: '/img/home.jpg'
+            img: '/img/homeandkitchen.jpg'
         });
     },
 

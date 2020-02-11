@@ -11,123 +11,128 @@ header{
     flex-direction: row;
     width: 100%;
     height: 130px; 
-    background-color: red;
+    background-color: rgb(5, 8, 35);
 }
 h1{
     padding-top: 20px;
-    padding-left: 20px;
+    padding-left: 30px;
+    font-size: 4em;
+    color: whitesmoke;
+    font-family: 'Roboto', sans-serif;
 }
 nav > ul{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    padding-top: 20px;
+    padding-left: 600px;
+    font-size: 1.5em;
+    font-family: 'Barlow', sans-serif;
 }
 nav > ul > li {
     text-decoration: none;
     padding-top: 30px;
+    list-style: none;
 }
 nav > ul > li > a{
     text-decoration: none;
+    color: whitesmoke;
 }
 .promotion{
-    margin: 20px;
-    margin-top: 30px;
-    padding-left: 30px;
-    height: 360px;
-    background-color: aqua;
-    border-top: 5px solid black;
+    height: 450px;   
 }
-.promotion-pro{
-    grid-template-columns: 20% 20% 20% 20%;
-    grid-column-gap: 2em;
-    padding: 10px;
-    display: grid;
-    height: 250px;
-    
-    
+.promotion-pro > img{ 
+    height: 450px;
+    width: 100%; 
+    box-shadow: 15px 10px 10px gray; 
 } 
-/* .promotion-pro{
-    position: relative;
-} */
-/* .pro {
-    display: none;
-  }  */
-.pro{
-    margin-top: 20px;
-    padding-top: 30px;
-    padding-left: 30px;
-    height: 250px;
-    background-color: darkgray;
-} 
-  .prev,
-.next {
-  cursor: pointer;
-  position: absolute;
-  top: 40%;
-  width: auto;
-  padding: 16px;
-  margin-top: -50px;
-  color: white;
-  font-weight: bold;
-  font-size: 20px;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-  -webkit-user-select: none;
-}
-.next {
-    right: 0;
-    border-radius: 3px 0 0 3px;
-}
-.prev:hover,
-.next:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-}  
+
 .categories{
     display: grid;
     grid-template-columns: 20% 20% 20% 20%;
     grid-column-gap: 2em;
-    height: 360px;
-    background-color: orange;
-    border-top: 5px solid black;
-    margin: 20px;
+    height: 500px;
+    background-color: rgb(247, 247, 247);
     margin-top: 30px;
     padding-left: 40px;
 }
 .category{
     margin-top: 40px;
     height: 280px;
-    background-color: darkgray;
+    /* background-color: darkgray; */
 }
 .category div{
     margin: 5px;
     padding-left: 30px;
 }
+.category > div > a{
+    text-decoration: none;
+    font-family: 'Open Sans', sans-serif;
+    color: rgb(47, 108, 165);
+}
+.category > div > a:hover{
+    font-weight: bold;
+}
 .category .des{
     padding-top: 10px;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    font-family: 'Open Sans', sans-serif;
 }
 .bestSeller{
-    background-color: olive;
-    border-top: 5px solid black;
-    height: 250px;
-    margin: 20px;
+    background-color:rgb(247, 247, 247);
+    height: 300px;
+    padding-left: 30px;
     margin-top: 30px;
+    margin-bottom: 20px;
+}
+.bestSeller > p{
+    padding-top: 20px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    font-size: 1.2em;
+    font-family: 'Open Sans', sans-serif;
+}
+.bestSeller > p > span > a{
+    font-size: .9em;
+    text-decoration: none;
+    margin-left: 40px;
+    color: rgb(47, 108, 165);
+}
+.bestSeller > p > span > a:hover{
+    cursor: pointer;
+    font-weight: bold;
 }
 .bsSeller{
     display: grid;
     grid-template-columns: repeat(10, 1fr);
     height: 200px;
+    padding-left: 40px;
 } 
 .bsSeller div{
     margin-top: 10px;
-    background-color: darkgray;
 }
 footer{
     padding-top: 50px;
     padding-left: 300px;
-    background-color: palevioletred;
+    background-color: #020a3a;
     display: grid;
     grid-template-columns: 30% 30% 30%;
     height: 200px;
+    color: whitesmoke;
 } 
+footer > div > span{
+    font-size: 1.2em;
+    font-family: 'Barlow', sans-serif;
+}
+footer > div > p{
+    margin-top: 10px;
+    font-family: 'Barlow', sans-serif;
+}
+footer > div > p > a{
+    color: white;
+    text-decoration: none;
+    
+}
 .products{
     display: grid;
     grid-template-columns: 1fr 4fr;
@@ -135,6 +140,11 @@ footer{
 .product-nav{
     margin-top: 30px;
     margin-left: 5px;
+    font-family: 'Barlow', sans-serif;
+}
+.product-nav > p{
+    font-size: 1.2em;
+    padding-left: 15px;
 }
 .product-nav > nav > div{
     margin-top: 5px;
@@ -146,6 +156,7 @@ footer{
 }
 .product-nav > nav > div > p > a{
     text-decoration: none;
+    color: black;
 }
 .product-nav > nav > div > p > a:hover{
     cursor: pointer;
@@ -154,85 +165,136 @@ footer{
 .pro-products{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    font-family: 'Open Sans', sans-serif;
+    grid-gap: 15px;
     padding: 30px;
 }
 .register-form{
-    border: 1px solid black;
-    height: 450px;
-    width: 380px;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    margin-left: 500px;
-    padding-top: 40px;
-    padding-left: 15px;
+    height: 628px;
+    background-image: url(/img/reg_log.jpg);
+    background-size: 100% 700px;
+    font-family: 'Open Sans', sans-serif;
+
+    
 }
 .register{
+    position: relative;
+    top: 40px;
     margin-bottom: 15px;
+    background-color: #ffffffab;
+    border: 1px solid grey;
+    height: 460px;
+    width: 380px;
+    /* margin-top: 30px; */
+    margin-bottom: 30px;
+    margin-left: 500px;
+    padding-top: 20px;
+    padding-left: 15px;
+    border-radius: 10px;
+    box-shadow: 15px 10px 10px gray; 
 }
-.register-form div{
+.register div{
     padding-top: 10px;
     padding-left: 13px;
+} 
+.register > div > a{
+    text-decoration: none;
+    color: rgb(68, 141, 210);
 }
 #reg-log{
+    position: absolute;
+    top: 680px;
+    font-family: 'Open Sans', sans-serif;
     text-align: center;
     margin-left: 540px;
-    margin-bottom: 30px;
-    padding-top: 10px;
+    
     padding-left: 20px;
     width: 300px;
-    /* margin-top: 80px; */
     border-top: 1px solid black;
     
 }
+#reg-log > a{
+    text-decoration: none;
+    color: rgb(68, 141, 210);
+}
 .register legend{
     padding-left: 20px;
-    padding-bottom: 30px;
+    padding-bottom: 20px;
+    font-size: 2em;
 }
 .register label{
-    padding: 10px;
+    padding: 10px; 
 }
 .register input{
     margin-left: 13px;
     padding: 3px;
     width: 200px;
+    border-radius: 5px;
 }
 .register p{
-    padding: 12px;
+    padding-left: 20px;
+    padding-bottom: 12px;
+    font-size: .8em;
+}
+.login-form{
+    height: 628px;
+    font-family: 'Open Sans', sans-serif;
+    background-image: url(/img/reg_log.jpg);
+    background-size: 100% 700px;
+    
 }
 .login{
-    border: 1px solid black;
-    height: 250px;
+    position: relative;
+    top: 130px;
+    background-color: #ffffffab;
+    border: 1px solid grey;
+    height: 280px;
     width: 380px;
-    margin-top: 45px;
     margin-bottom: 30px;
     margin-left: 500px;
-    padding-top: 30px;
+    padding-top: 15px;
     padding-left: 15px;
+    border-radius: 10px;
+    box-shadow: 15px 10px 10px gray; 
+
 }
 .login label,input{
     margin-left: 20px;
     margin-bottom: 10px;
+    border-radius: 5px;
 }
 .login legend{
-    margin-left: 35px;
+    margin-left: 20px;
     margin-bottom: 10px;
+    font-size: 2em;
 
 }
 .login p {
     margin-left: 25px;
     margin-bottom: 15px;
+    font-size: .8em;
 }
 .login div{
     margin-top: 20px;
     margin-left: 20px;
 }
+.login > div > a{
+    text-decoration: none;
+    color: rgb(68, 141, 210);
+}
 #log-reg{
+    position: relative;
+    top: 140px;
     border-top: 1px solid black;
     width: 370px;
     margin-left: 510px;
     text-align: center;
     padding-top: 10px;
-    margin-bottom: 20px;
+    
+}
+#log-reg > a{
+    text-decoration: none;
+    color: rgb(68, 141, 210);
 }
 
 
