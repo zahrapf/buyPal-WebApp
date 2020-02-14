@@ -17,7 +17,7 @@ app.use(express.static("public"));
 
 app.get("/", (req,res)=>{
     res.render("index", {
-        title: "Home: ZARA.ca",
+        title: "Home: Amazon.ca",
         headingInfo: "Amazon",
         promotion: promotionModel.getAllpromotion(),
         category: categoryModel.getAllCategory(),
@@ -27,7 +27,7 @@ app.get("/", (req,res)=>{
 
 app.get("/products", (req,res)=>{
     res.render("products", {
-        title: "Products: ZARA.ca",
+        title: "Products: Amazon.ca",
         headingInfo: "Amazon",
         product: productModel.getAllProduct()
     });
@@ -35,27 +35,27 @@ app.get("/products", (req,res)=>{
 
 app.get("/registration", (req,res)=>{
     res.render("register", {
-        title: "Register: ZARA.ca",
+        title: "Register: Amazon.ca",
         headingInfo: "Amazon"
     });
 });
 app.post("/registration", (req,res)=>{
     res.render("register", {
-        title: "Register: ZARA.ca",
+        title: "Register: Amazon.ca",
         headingInfo: "Amazon"
     });
 });
 
 app.get("/login", (req,res)=>{
     res.render("login", {
-        title: "login: ZARA.ca",
+        title: "login: Amazon.ca",
         headingInfo: "Amazon"
     });
 });
 
 app.post("/login", (req,res)=>{
     res.render("login", {
-        title: "login: ZARA.ca",
+        title: "login: Amazon.ca",
         headingInfo: "Amazon"
     });
 });

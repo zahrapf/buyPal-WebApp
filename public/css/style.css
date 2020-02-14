@@ -45,10 +45,9 @@ nav > ul > li > a{
     width: 100%; 
     box-shadow: 15px 10px 10px gray; 
 } 
-
 .categories{
     display: grid;
-    grid-template-columns: 20% 20% 20% 20%;
+    grid-template-columns: repeat(4, 20%);
     grid-column-gap: 2em;
     height: 500px;
     background-color: rgb(247, 247, 247);
@@ -58,7 +57,6 @@ nav > ul > li > a{
 .category{
     margin-top: 40px;
     height: 280px;
-    /* background-color: darkgray; */
 }
 .category div{
     margin: 5px;
@@ -87,7 +85,7 @@ nav > ul > li > a{
 }
 .bestSeller > p{
     padding-top: 20px;
-    margin-left: 20px;
+    margin-left: 40px;
     margin-bottom: 20px;
     font-size: 1.2em;
     font-family: 'Open Sans', sans-serif;
@@ -113,10 +111,10 @@ nav > ul > li > a{
 }
 footer{
     padding-top: 50px;
-    padding-left: 300px;
+    padding-left: 150px;
     background-color: #020a3a;
     display: grid;
-    grid-template-columns: 30% 30% 30%;
+    grid-template-columns: repeat(4, 25%);
     height: 200px;
     color: whitesmoke;
 } 
@@ -130,8 +128,7 @@ footer > div > p{
 }
 footer > div > p > a{
     color: white;
-    text-decoration: none;
-    
+    text-decoration: none;   
 }
 .products{
     display: grid;
@@ -169,13 +166,24 @@ footer > div > p > a{
     grid-gap: 15px;
     padding: 30px;
 }
+.pro-products #productTitle{
+    font-weight: bold;
+}
+#bsCon{
+    color: rgb(212, 10, 10);
+}
+.addCart a{
+    text-decoration: none;
+    color:  rgb(47, 108, 165);
+} 
+.addCart a:hover{
+    font-weight: bold;
+}
 .register-form{
     height: 628px;
     background-image: url(/img/reg_log.jpg);
     background-size: 100% 700px;
-    font-family: 'Open Sans', sans-serif;
-
-    
+    font-family: 'Open Sans', sans-serif;   
 }
 .register{
     position: relative;
@@ -185,7 +193,6 @@ footer > div > p > a{
     border: 1px solid grey;
     height: 460px;
     width: 380px;
-    /* margin-top: 30px; */
     margin-bottom: 30px;
     margin-left: 500px;
     padding-top: 20px;
@@ -256,7 +263,6 @@ footer > div > p > a{
     padding-left: 15px;
     border-radius: 10px;
     box-shadow: 15px 10px 10px gray; 
-
 }
 .login label,input{
     margin-left: 20px;
@@ -267,7 +273,6 @@ footer > div > p > a{
     margin-left: 20px;
     margin-bottom: 10px;
     font-size: 2em;
-
 }
 .login p {
     margin-left: 25px;
@@ -289,8 +294,7 @@ footer > div > p > a{
     width: 370px;
     margin-left: 510px;
     text-align: center;
-    padding-top: 10px;
-    
+    padding-top: 10px;    
 }
 #log-reg > a{
     text-decoration: none;

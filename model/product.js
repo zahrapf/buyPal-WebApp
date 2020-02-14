@@ -8,7 +8,7 @@ const product=
             img: '/img/macbook.jpg',
             title: 'MacBook',
             price: 'Starts from $1200',
-            category: 'electronoc',
+            category: 'Computers & Accessories',
             bestSeller: false
         });
 
@@ -16,7 +16,7 @@ const product=
             img: '/img/headphone.jpg',
             title: 'Sony Headphone',
             price: '$50',
-            category: 'electronoc',
+            category: 'Headphones',
             bestSeller: true
         });
 
@@ -24,7 +24,7 @@ const product=
             img: '/img/mouse.jpg',
             title: 'Apple Mouse',
             price: '$110',
-            category: 'electronoc',
+            category: 'Accessories & Supplies',
             bestSeller: true
         });
 
@@ -32,15 +32,15 @@ const product=
             img: '/img/airpod.jpg',
             title: 'Apple Airpod',
             price: '$120',
-            category: 'electronoc',
+            category: 'Headphones',
             bestSeller: false
         });
 
         this.productArr.push({
             img: '/img/remoteControl.jpg',
-            title: 'abc',
+            title: 'Remote Control',
             price: '$35',
-            category: 'electronoc',
+            category: 'Accessories & Supplies',
             bestSeller: true
         });
 
@@ -48,7 +48,7 @@ const product=
             img: '/img/iphone.jpg',
             title: 'Apple iphone',
             price: 'Starts from $900',
-            category: 'electronoc',
+            category: 'Phones & Accesories',
             bestSeller: false
         });
     },
