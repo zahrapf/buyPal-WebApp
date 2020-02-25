@@ -17,8 +17,8 @@ app.use(express.static("public"));
 
 app.get("/", (req,res)=>{
     res.render("index", {
-        title: "Home: Amazon.ca",
-        headingInfo: "Amazon",
+        title: "Home: buyPal.ca",
+        headingInfo: "buyPal",
         promotion: promotionModel.getAllpromotion(),
         category: categoryModel.getAllCategory(),
         bsProduct: bsProductModel.getAllbsProduct()
@@ -27,36 +27,36 @@ app.get("/", (req,res)=>{
 
 app.get("/products", (req,res)=>{
     res.render("products", {
-        title: "Products: Amazon.ca",
-        headingInfo: "Amazon",
+        title: "Products: buyPal.ca",
+        headingInfo: "buyPal",
         product: productModel.getAllProduct()
     });
 });
 
 app.get("/registration", (req,res)=>{
     res.render("register", {
-        title: "Register: Amazon.ca",
-        headingInfo: "Amazon"
+        title: "Register: buyPal.ca",
+        headingInfo: "buyPal"
     });
 });
 app.post("/registration", (req,res)=>{
     res.render("register", {
-        title: "Register: Amazon.ca",
-        headingInfo: "Amazon"
+        title: "Register: buyPal.ca",
+        headingInfo: "buyPal"
     });
 });
 
 app.get("/login", (req,res)=>{
     res.render("login", {
-        title: "login: Amazon.ca",
-        headingInfo: "Amazon"
+        title: "login: buyPal.ca",
+        headingInfo: "buyPal"
     });
 });
 
 app.post("/login", (req,res)=>{
     res.render("login", {
-        title: "login: Amazon.ca",
-        headingInfo: "Amazon"
+        title: "login: buyPal.ca",
+        headingInfo: "buyPal"
     });
 });
 
