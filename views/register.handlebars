@@ -1,14 +1,21 @@
 <div class="register-form">
+
+    {{#each errorMsg}}
+        <div class="errors">
+            {{this}}
+        </div>
+    {{/each}}
+
     <form class="register" method="POST" action ="/registration">
         <legend>Create account</legend>
         <label for="userName">Your Name</label> <br>  
-        <input type="text" id="userName" name="userName"> <br>
+        <input type="text" id="userName" name="userName" value={{user_userName}}> <br>
 
         <label for="email">Email</label>  <br>  
-        <input type="email" id="email" name="email"> <br>
+        <input type="email" id="email" name="email" value={{user_email}}> <br>
 
         <label for="password">Password</label>    <br>
-        <input type="text" id="password" name="password"> <br> 
+        <input type="text" id="password" name="password" value={{user_password}}> <br> 
         <p>Password must consist of at least 6 characters</p>
 
         <label for="passwordAgain">Password Again</label>   <br> 
