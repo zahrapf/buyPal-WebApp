@@ -10,20 +10,35 @@
         <legend>Create account</legend>
         <label for="userName">Your Name</label>  
         <input type="text" id="userName" name="userName" value={{user_userName}}> 
+        {{#if usernameErrorMsg}}
+            <p class="error">{{usernameErrorMsg}}</p>
+        {{/if}}
 
         <label for="email">Email</label>   
         <input type="email" id="email" name="email" value={{user_email}}> 
 
+        {{#if emailErrorMsg}}
+            <p class="error">{{emailErrorMsg}}</p>
+        {{/if}}
+
         <label for="password">Password</label>    
-        <input type="text" id="password" name="password" value={{user_password}}> 
+        <input type="password" id="password" name="password" value={{user_password}}> 
         <p>Password must consist of at least 6 characters</p>
 
-        <label for="passwordAgain">Password Again</label>   
-        <input type="text" id="passwordAgain" name="passwordAgain"> 
+        {{#if passwordErrorMsg}}
+            <p class="error">{{passwordErrorMsg}}</p>
+        {{/if}}
 
-        <input type="submit" value="Create your Amazon account">
+        <label for="passwordAgain">Password Again</label>   
+        <input type="password" id="passwordAgain" name="passwordAgain"> 
+
+        {{#if passwordAgainErrorMsg}}
+            <p class="error">{{passwordAgainErrorMsg}}</p>
+        {{/if}}
+
+        <input id="submitbtn" type="submit" value="Create your buyPal account">
         <div>
-            By creating an account, you agree to Amazon's <br>
+            By creating an account, you agree to buyPal's
             <a href="">Conditions of Use</a> and <a href="">Privacy Notice.</a>
         </div>
     </form>

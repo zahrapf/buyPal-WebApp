@@ -1,23 +1,25 @@
 <div class="login-form">
-    {{#each errorMsg}}
-        <div class="errors">
-            {{this}}
-        </div>
-    {{/each}}
+   
     <form class="login" method="POST" action ="/login">
         <legend>Sign-In</legend>
         
         <label for="email">Email</label> 
-        <input type="email" id="email" name="email" value={{user_email}}> 
-
+        <input type="email" class="email" name="email" value={{user_email}}>       
+        {{#if emailErrorMsg}}
+        <p class="error">{{emailErrorMsg}}</p>
+        {{/if}}
+       
         <label for="password">Password</label> 
-        <input type="text" id="password" name="password" valu={{user_password}}> 
-        <p>Password must consist of at least 6 characters</p>
-
+        <input type="password" class="password" name="password" value={{user_password}}> 
+        <p>Password must consist of at least 6 characters</p>       
+        {{#if passwordErrorMsg}}
+        <p class="error">{{passwordErrorMsg}}</p>
+        {{/if}}
+     
         <input type="submit" value="Log In">
         <div><a href=" ">Need help?</a></div>
     </form>
     <div id="log-reg">
-        New to Amazon? <br> <a href="/registration">Create your Amazon account</a>
+        New to buyPal? <br> <a href="/registration">Create your buyPal account</a>
     </div>
 </div>

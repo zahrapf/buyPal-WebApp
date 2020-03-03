@@ -41,33 +41,42 @@ app.get("/registration", (req,res)=>{
     });
 });
 app.post("/registration", (req,res)=>{
-    const errors = [];
+    const usernameError = [];
+    const emailError = [];
+    const passwordError = [];
+    const passwordAgainError = [];
 
-    if(req.body.userName==""){
-        errors.push("You must enter your user name");
+    if(req.body.userName==="" || req.body.userName=== null || req.body.userName.length===0){
+        usernameError.push("Enter your name");
     }
 
-    let userEmail = req.body.email.toString();
-    if(req.body.email==""){
-        errors.push("You must enter your Email");
-    }else if(!(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(userEmail))){
-        errors.push("Please enter a valid Email address")
+    if(req.body.email==="" || req.body.email===null || req.body.email.length===0){
+        emailError.push("Enter your Email");
+    }else if(!(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(req.body.email))){
+        emailError.push("Enter a valid Email address")
     }
 
-    let userPassword = req.body.password.toString();
-    if(req.body.password=="" || req.body.userName == null){
-        errors.push("You must enter your password");
-    }else if(userPassword.length < 6 || userPassword.length > 12){
-        errors.push("You must enter a password more than 6 and less than 12 characters");
-    }else if(!(/^(?=.*\d)(?=.*[a-zA-Z]).{6,12}$/.test(userPassword))){
-        errors.push("Your password must be alphanumeric one");
+    if(req.body.password=="" || req.body.password== null || req.body.password.length===0){
+        passwordError.push("You must enter your password");
+    }else if(req.body.password.length < 6 || req.body.password.length > 12){
+        passwordError.push("You must enter a password between 6 to 12 characters");
+    }else if(!(/^(?=.*\d)(?=.*[a-zA-Z]).{6,12}$/.test(req.body.password))){
+        passwordError.push("Your password must be alphanumeric one");
     }
 
-    if(errors.length > 0){
+    if(req.body.password !== req.body.passwordAgain){
+        passwordAgainError.push("Your password does not match")
+    }
+
+    if(usernameError.length > 0 || emailError.length > 0 || passwordError.length > 0 || passwordAgainError.length > 0){
        
         res.render("register", {
             title: "Register: buyPal.ca",
-            errorMsg: errors,
+            headingInfo: "buyPal",
+            usernameErrorMsg: usernameError,
+            emailErrorMsg: emailError,
+            passwordErrorMsg: passwordError,
+            passwordAgainErrorMsg: passwordAgainError,
             user_userName: req.body.userName,
             user_email: req.body.email,
             user_password: req.body.password
@@ -95,21 +104,24 @@ app.get("/login", (req,res)=>{
 });
 
 app.post("/login", (req,res)=>{
-    const errors = [];
+    const emailError = [];
+    const passwordError = [];
 
-    if(req.body.email === "" || req.body.email === null){
-        errors.push("You must enter your Email");
+    if(req.body.email === "" || req.body.email === null || req.body.email.length === 0){
+        emailError.push("Enter your Email");
     }
 
-    if(req.body.password === "" || req.body.userName === null){
-        errors.push("You must enter your password");
+    if(req.body.password === "" || req.body.password === null || req.body.password.length === 0){
+        passwordError.push("Enter your password");
     }
 
-    if(errors.length > 0){
+    if(emailError.length > 0 || passwordError.length > 0){
        
         res.render("login", {
             title: "Login: buyPal.ca",
-            errorMsg: errors,
+            headingInfo: "buyPal",
+            emailErrorMsg: emailError,
+            passwordErrorMsg: passwordError,
             user_email: req.body.email,
             user_password: req.body.password
         });
