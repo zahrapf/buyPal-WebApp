@@ -47,9 +47,6 @@ section{
 main{
     display: grid;
 }
-/* .promotion{
-    height: 450px;   
-} */
 .promotion-pro > img{ 
     height: 450px;
     width: 100%; 
@@ -59,16 +56,12 @@ main{
     display: grid;
     grid-template-columns: repeat(4, 20%);
     grid-column-gap: 3em;
-    /* height: 500px; */
     background-color: rgb(247, 247, 247);
     margin-top: 30px; 
     padding-left: 50px;
 }
 .category{
     display: grid;
-    /* grid-template-rows: auto; */
-    /* margin-top: 40px; */
-    /* height: 280px; */
 }
 .category div{
     margin: 5px;
@@ -197,9 +190,6 @@ footer > div > p > a{
     font-family: 'Open Sans', sans-serif;   
     padding-left: 340px;
 }
-/* .email:invalid {
-    border: 2px solid red;
-} */
 .invalid{
     border: 1px solid red;
 }
@@ -214,7 +204,6 @@ footer > div > p > a{
     margin-left: 10px;
     padding-top: 20px;
     padding-left: 15px;
-    /* border-radius: 10px; */
     box-shadow: 15px 10px 10px gray; 
     margin-left: 10px;
         
@@ -275,7 +264,6 @@ footer > div > p > a{
     margin-left: 10px;
     padding-top: 15px;
     padding-left: 15px;
-    /* border-radius: 10px; */
     box-shadow: 15px 10px 10px gray;        
 }
 .login label{
@@ -319,6 +307,32 @@ footer > div > p > a{
 .error{
     color: red;
 }
+.dashboard{
+    display: grid;
+    margin: 210px 100px 300px 280px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.25em;
+}
+.dashboard div{
+    margin: 10px;
+    margin-bottom: 20px;
+    padding-left: 20px;
+}
+.dashboard > div > a{
+    text-decoration: none;
+    color: rgb(68, 141, 210);
+}
+.dashboard > div > a{
+    cursor: pointer;
+
+}
+#dashboardHeading{
+    font-size: 2.2em;
+    margin-bottom: 40px;
+}
+#dashboardMsg{
+    font-size: 1.25em;
+}
 @media only screen and (max-width: 1025px) {
     h1{
         padding-top: 40px;
@@ -333,7 +347,6 @@ footer > div > p > a{
     .categories{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        /* height: 910px; */
         padding-left: 100px; 
        
     }
@@ -384,6 +397,18 @@ footer > div > p > a{
         margin: 20px 0 20px 65px;
         padding-left: 0;
     }
+    .dashboard{
+        margin: 100px 30px 100px 150px;
+        font-size: 1em;
+    }
+    #dashboardHeading{
+        margin-bottom: 5px;
+    }
+    .dashboard div{
+        padding-left: 12px;
+        margin-left: 0;
+        margin-bottom: 5px;
+    }
   
 }
 @media only screen and (max-width: 770px) {
@@ -407,7 +432,6 @@ footer > div > p > a{
     .categories{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        /* height: 910px; */
         padding-left: 30px; 
        
     }
@@ -465,6 +489,12 @@ footer > div > p > a{
         padding-left: 0;
     
     }
+    .dashboard{
+        margin: 100px 30px 100px 50px;
+    }
+    .dashboard div{
+        padding-left: 0px;
+    }
   
 }
 @media only screen and (max-width: 425px){
@@ -520,7 +550,7 @@ footer > div > p > a{
     .pro-products{
         display: grid;
         grid-template-columns: auto;
-        padding:  30px 0px 30px 10px;
+        padding:  30px 0px 30px 50px;
     }
     .register-form{
         background-image: none;
@@ -597,6 +627,10 @@ footer > div > p > a{
         margin: 0 0 20px 45px;
         padding-left: 0;
     }
+    .dashboard{
+        margin: 100px 30px 100px 40px;
+    }
+    
 }
 @media only screen and (max-width: 320px) {
     header{
@@ -686,4 +720,8 @@ footer > div > p > a{
         margin: 0 0 20px 45px;
         padding-left: 0;
     }
+    #dashboardHeading{
+        margin-bottom: 0px;
+    }
+   
 }

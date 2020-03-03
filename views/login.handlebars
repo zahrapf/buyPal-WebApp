@@ -1,30 +1,32 @@
-<div class="login-form">
-   
-    <form class="login" method="POST" action ="/login">
-        <legend>Sign-In</legend>
+<section>
+    <div class="login-form">
+    
+        <form class="login" method="POST" action ="/login">
+            <legend>Sign-In</legend>
+            
+            <label for="email">Email</label> 
+            {{#if emailErrorMsg}}
+            <input type="email" class="invalid" id="email" name="email" value={{user_email}}>       
+            <p class="error">{{emailErrorMsg}}</p>
+            {{else}}
+            <input type="email" id="email" name="email" value={{user_email}}>  
+            {{/if}}
         
-        <label for="email">Email</label> 
-        {{#if emailErrorMsg}}
-        <input type="email" class="invalid" id="email" name="email" value={{user_email}}>       
-        <p class="error">{{emailErrorMsg}}</p>
-        {{else}}
-        <input type="email" id="email" name="email" value={{user_email}}>  
-        {{/if}}
-       
-        <label for="password">Password</label> 
-        {{#if passwordErrorMsg}}
-        <input type="password" class="invalid" id="password" name="password" value={{user_password}}> 
-        <p>Password must consist of at least 6 characters</p>       
-        <p class="error">{{passwordErrorMsg}}</p>
-        {{else}}
-        <input type="password" id="password" name="password" value={{user_password}}> 
-        <p>Password must consist of at least 6 characters</p>  
-        {{/if}}
-     
-        <input type="submit" value="Log In">
-        <div><a href=" ">Need help?</a></div>
-    </form>
-    <div id="log-reg">
-        New to buyPal? <br> <a href="/registration">Create your buyPal account</a>
+            <label for="password">Password</label> 
+            {{#if passwordErrorMsg}}
+            <input type="password" class="invalid" id="password" name="password" value={{user_password}}> 
+            <p>Password must consist of at least 6 characters</p>       
+            <p class="error">{{passwordErrorMsg}}</p>
+            {{else}}
+            <input type="password" id="password" name="password" value={{user_password}}> 
+            <p>Password must consist of at least 6 characters</p>  
+            {{/if}}
+        
+            <input type="submit" value="Log In">
+            <div><a href=" ">Need help?</a></div>
+        </form>
+        <div id="log-reg">
+            New to buyPal? <br> <a href="/registration">Create your buyPal account</a>
+        </div>
     </div>
-</div>
+</section>

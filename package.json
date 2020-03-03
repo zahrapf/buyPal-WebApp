@@ -9,6 +9,7 @@
   "author": "Zahra Pourfakhar",
   "license": "ISC",
   "dependencies": {
+    "@sendgrid/mail": "^6.5.3",
     "express": "^4.17.1",
     "express-handlebars": "^3.1.0"
   },

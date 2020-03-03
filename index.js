@@ -40,14 +40,27 @@ app.get("/registration", (req,res)=>{
         headingInfo: "buyPal"
     });
 });
+app.get("/dashboard", (req,res)=>{
+    res.render("dashboard", {
+        title: "Register: buyPal.ca",
+        headingInfo: "buyPal",
+        user_firstName: req.body.firstName,
+        user_lastName: req.body.lastName
+    });
+});
 app.post("/registration", (req,res)=>{
-    const usernameError = [];
+    const firstnameError = [];
+    const lastnameError = [];
     const emailError = [];
     const passwordError = [];
     const passwordAgainError = [];
 
-    if(req.body.userName==="" || req.body.userName=== null || req.body.userName.length===0){
-        usernameError.push("Enter your name");
+    if(req.body.firstName==="" || req.body.firstName=== null || req.body.firstName.length===0){
+        firstnameError.push("Enter your first name");
+    }
+
+    if(req.body.lastName==="" || req.body.lastName=== null || req.body.lastName.length===0){
+        lastnameError.push("Enter your last name");
     }
 
     if(req.body.email==="" || req.body.email===null || req.body.email.length===0){
@@ -68,32 +81,50 @@ app.post("/registration", (req,res)=>{
         passwordAgainError.push("Your password does not match")
     }
 
-    if(usernameError.length > 0 || emailError.length > 0 || passwordError.length > 0 || passwordAgainError.length > 0){
+    if(firstnameError.length > 0 || lastnameError.length > 0 || emailError.length > 0 || passwordError.length > 0 || passwordAgainError.length > 0){
        
         res.render("register", {
             title: "Register: buyPal.ca",
             headingInfo: "buyPal",
-            usernameErrorMsg: usernameError,
+            firstnameErrorMsg: firstnameError,
+            lastnameErrorMsg: lastnameError,
             emailErrorMsg: emailError,
             passwordErrorMsg: passwordError,
             passwordAgainErrorMsg: passwordAgainError,
-            user_userName: req.body.userName,
+            user_firstName: req.body.firstName,
+            user_lastName: req.body.lastName,
             user_email: req.body.email,
             user_password: req.body.password
         });
         
+        
 
     }else{
-        
-        const {userName} =req.body;
-            res.render("register",{
-                title: "Register: buyPal.ca",
-                headingInfo: "buyPal",
-                successMessage :`Thank you ${userName} 
-                    for joining buyPal`
-            }); 
-    }
 
+        const {firstName, email} = req.body;
+        const sgMail = require('@sendgrid/mail');
+        sgMail.setApiKey("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");
+        const msg = {
+        to: `${email}`,
+        from: 'zp.fakhar9675@gmail.com',
+        subject: 'Confirmation Email for your buyPal account',
+        html: `Hi ${firstName}, <br>
+            You successfully registered in buyPal Website. 
+            You can change your settings at any time.
+            Check out your email for new promotions. <br> <br>
+            Thank you!<br><br>
+            Regards,<br>
+            buyPal Team
+            `,
+        };
+        sgMail.send(msg)
+        .then(()=>{
+            res.redirect("/dashboard"); 
+        })
+        .catch(err =>{
+            console.log(err);
+        })    
+    }
 });
 
 app.get("/login", (req,res)=>{
@@ -127,13 +158,14 @@ app.post("/login", (req,res)=>{
         });
         
     }else{
-        res.render("index", {
-            title: "Home: buyPal.ca",
-            headingInfo: "buyPal",
-            promotion: promotionModel.getAllpromotion(),
-            category: categoryModel.getAllCategory(),
-            bsProduct: bsProductModel.getAllbsProduct()
-        });
+        // res.render("index", {
+        //     title: "Home: buyPal.ca",
+        //     headingInfo: "buyPal",
+        //     promotion: promotionModel.getAllpromotion(),
+        //     category: categoryModel.getAllCategory(),
+        //     bsProduct: bsProductModel.getAllbsProduct()
+        // });
+        res.redirect("/");
     }
 });
 
