@@ -200,6 +200,9 @@ footer > div > p > a{
 /* .email:invalid {
     border: 2px solid red;
 } */
+.invalid{
+    border: 1px solid red;
+}
 .register{
     display: grid;
     grid-template-columns: auto;

@@ -9,24 +9,29 @@
     <form class="register" method="POST" action ="/registration">
         <legend>Create account</legend>
         <label for="userName">Your Name</label>  
-        <input type="text" id="userName" name="userName" value={{user_userName}}> 
         {{#if usernameErrorMsg}}
-            <p class="error">{{usernameErrorMsg}}</p>
+        <input type="text" class="invalid" id="userName" name="userName" value={{user_userName}}> 
+        <p class="error">{{usernameErrorMsg}}</p>
+        {{else}}
+        <input type="text" id="userName" name="userName" value={{user_userName}}> 
         {{/if}}
 
         <label for="email">Email</label>   
-        <input type="email" id="email" name="email" value={{user_email}}> 
-
         {{#if emailErrorMsg}}
-            <p class="error">{{emailErrorMsg}}</p>
+        <input type="email" class="invalid" id="email" name="email" value={{user_email}}> 
+        <p class="error">{{emailErrorMsg}}</p>
+        {{else}}
+        <input type="email" id="email" name="email" value={{user_email}}> 
         {{/if}}
 
         <label for="password">Password</label>    
-        <input type="password" id="password" name="password" value={{user_password}}> 
-        <p>Password must consist of at least 6 characters</p>
-
         {{#if passwordErrorMsg}}
-            <p class="error">{{passwordErrorMsg}}</p>
+        <input type="password" class="invalid" id="password" name="password" value={{user_password}}> 
+        <p>Password must consist of at least 6 characters</p>
+        <p class="error">{{passwordErrorMsg}}</p>
+        {{else}}
+        <input type="password" id="password" name="password" value={{user_password}}>
+        <p>Password must consist of at least 6 characters</p> 
         {{/if}}
 
         <label for="passwordAgain">Password Again</label>   

@@ -4,16 +4,21 @@
         <legend>Sign-In</legend>
         
         <label for="email">Email</label> 
-        <input type="email" class="email" name="email" value={{user_email}}>       
         {{#if emailErrorMsg}}
+        <input type="email" class="invalid" id="email" name="email" value={{user_email}}>       
         <p class="error">{{emailErrorMsg}}</p>
+        {{else}}
+        <input type="email" id="email" name="email" value={{user_email}}>  
         {{/if}}
        
         <label for="password">Password</label> 
-        <input type="password" class="password" name="password" value={{user_password}}> 
-        <p>Password must consist of at least 6 characters</p>       
         {{#if passwordErrorMsg}}
+        <input type="password" class="invalid" id="password" name="password" value={{user_password}}> 
+        <p>Password must consist of at least 6 characters</p>       
         <p class="error">{{passwordErrorMsg}}</p>
+        {{else}}
+        <input type="password" id="password" name="password" value={{user_password}}> 
+        <p>Password must consist of at least 6 characters</p>  
         {{/if}}
      
         <input type="submit" value="Log In">
