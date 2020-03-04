@@ -1,6 +1,7 @@
 const express = require("express");
 const exphbs = require("express-handlebars");
 const bodyParser = require("body-parser");
+require("dotenv").config({path:"./config/keys.env"});
 
 const app = express();
 
@@ -101,7 +102,7 @@ app.post("/registration", (req,res)=>{
 
         const {firstName, email} = req.body;
         const sgMail = require('@sendgrid/mail');
-        sgMail.setApiKey("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");
+        sgMail.setApiKey(process.env.SEND_GRID_API_KEY);
         const msg = {
         to: `${email}`,
         from: 'zp.fakhar9675@gmail.com',
@@ -160,7 +161,7 @@ app.post("/login", (req,res)=>{
     }
 });
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT;
 app.listen(PORT, ()=>{
     console.log(`Server Started!`); 
 });
