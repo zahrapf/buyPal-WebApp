@@ -44,8 +44,6 @@ app.get("/dashboard", (req,res)=>{
     res.render("dashboard", {
         title: "Register: buyPal.ca",
         headingInfo: "buyPal",
-        user_firstName: req.body.firstName,
-        user_lastName: req.body.lastName
     });
 });
 app.post("/registration", (req,res)=>{
@@ -108,12 +106,12 @@ app.post("/registration", (req,res)=>{
         to: `${email}`,
         from: 'zp.fakhar9675@gmail.com',
         subject: 'Confirmation Email for your buyPal account',
-        html: `Hi ${firstName}, <br>
+        html: `Hi ${firstName}, <br><br>
             You successfully registered in buyPal Website. 
             You can change your settings at any time.
             Check out your email for new promotions. <br> <br>
             Thank you!<br><br>
-            Regards,<br>
+            Regards,<br><br>
             buyPal Team
             `,
         };
@@ -158,13 +156,6 @@ app.post("/login", (req,res)=>{
         });
         
     }else{
-        // res.render("index", {
-        //     title: "Home: buyPal.ca",
-        //     headingInfo: "buyPal",
-        //     promotion: promotionModel.getAllpromotion(),
-        //     category: categoryModel.getAllCategory(),
-        //     bsProduct: bsProductModel.getAllbsProduct()
-        // });
         res.redirect("/");
     }
 });
