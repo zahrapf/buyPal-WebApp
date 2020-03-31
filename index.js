@@ -26,7 +26,7 @@ app.use("/user", userController);
 app.use("/products", productController);
 
 
-mongoose.connect(process.env.MONGO_DB_CONNECTION_STRING, {useNewUrlParser: true, useUnifiedTopology: true})
+mongoose.connect(process.env.MONGO_DB_URL, {useNewUrlParser: true, useUnifiedTopology: true})
 .then(() => {
     console.log(`MongoDB Database has been connected!`)
 })

@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const registerModel = require("../model/userRegistration");
+const registerModel = require("../models/userRegistration");
 
 router.get("/registration", (req,res)=>{
     res.render("user/register", {
