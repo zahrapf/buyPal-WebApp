@@ -25,9 +25,9 @@ h1{
 }
 nav > ul{
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, 25%);
     padding-top: 20px;
-    padding-left: 600px;
+    padding-left: 300px;
     font-size: 1.5em;
     font-family: 'Barlow', sans-serif;
 }
@@ -48,29 +48,32 @@ main{
     display: grid;
 }
 .promotion-pro > img{ 
-    height: 450px;
+    height: 600px;
     width: 100%; 
     box-shadow: 15px 10px 10px gray; 
 } 
 .categories{
     display: grid;
-    grid-template-columns: repeat(4, 20%);
-    grid-column-gap: 3em;
-    background-color: rgb(247, 247, 247);
+    grid-template-columns: repeat(2, 40%);
+    grid-column-gap: 4em;
     margin-top: 30px; 
-    padding-left: 50px;
+    padding-left: 180px;
 }
 .category{
     display: grid;
+    background-color: rgb(247, 247, 247);
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 .category div{
-    margin: 5px;
-    padding-left: 30px;
+    margin: 10px;
+    padding-left: 40px;
 }
 .category > div > a{
     text-decoration: none;
     font-family: 'Open Sans', sans-serif;
     color: rgb(47, 108, 165);
+    font-size: 1.1em;
 }
 .category > div > a:hover{
     font-weight: bold;
@@ -78,7 +81,7 @@ main{
 .category .des{
     padding-top: 10px;
     margin-bottom: 10px;
-    font-size: 1.2em;
+    font-size: 1.3em;
     font-family: 'Open Sans', sans-serif;
 }
 .bestSeller{
@@ -333,7 +336,8 @@ footer > div > p > a{
 #dashboardMsg{
     font-size: 1.25em;
 }
-@media only screen and (max-width: 1025px) {
+
+@media only screen and (max-width: 1300px) {
     h1{
         padding-top: 40px;
         padding-left: 50px;
@@ -725,3 +729,14 @@ footer > div > p > a{
     }
    
 }
+
+/* @media (max-width: 575.98px) { ... }
+
+// Small devices (landscape phones, less than 768px)
+@media (max-width: 767.98px) { ... }
+
+// Medium devices (tablets, less than 992px)
+@media (max-width: 991.98px) { ... }
+
+// Large devices (desktops, less than 1200px)
+@media (max-width: 1199.98px) { ... } */

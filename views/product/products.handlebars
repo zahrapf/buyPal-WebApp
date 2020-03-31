@@ -1,0 +1,48 @@
+<section class="products">
+  
+    <div class="product-nav">
+        <p>Electronics & Accessories</p>
+        
+        <nav>
+            <div>
+                <p><a href="">Computers & Accessories</a></p>
+                <p><a href="">Phones & Accesories</a></p>
+                <p><a href="">Camera, Photo & Video</a></p>
+                <p><a href="">Accessories & Supplies</a></p>
+                <p><a href="">Headphones</a></li>
+
+            </div>
+        </nav>
+    </div>
+
+    <div class="pro-products">
+        {{#each product}}
+            <div>
+                <div>
+                    <img src="{{this.img}}" alt="" width="250px" height="250px">
+                </div>
+                <div id="productTitle">
+                    {{this.title}}
+                </div>
+                <div>
+                    {{this.price}}
+                </div>
+                <div>
+                    {{this.category}}
+                </div>
+                <div>
+                    {{this.bs}}
+                </div>
+                <div>
+                    
+                    {{#if this.bestSeller}}
+                    <p id="bsCon">Best Seller</p>
+                    {{else}}
+                    <p></p><br>
+                    {{/if}}
+                </div>
+                <div class="addCart"><a href=" ">Add to cart</a></div> 
+            </div>
+        {{/each}}
+    </div>
+</section>

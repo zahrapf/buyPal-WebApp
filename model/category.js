@@ -15,7 +15,7 @@ const category=
         });
 
         this.categoryArr.push({
-            description: 'Clothes and Showes',
+            description: 'Clothes and Shoes',
             img: '/img/clothes.jpg'
         });
 
