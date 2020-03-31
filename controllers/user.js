@@ -140,7 +140,7 @@ router.post("/login", (req,res)=>{
         });
         
     }else{
-        res.redirect("/");
+        res.redirect("/user/dashboard"); 
     }
 });
 

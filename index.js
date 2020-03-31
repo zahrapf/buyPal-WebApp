@@ -3,6 +3,11 @@ const exphbs = require("express-handlebars");
 const bodyParser = require("body-parser");
 const mongoose = require('mongoose');
 
+//load controllers
+const generalController = require("./controllers/general");
+const productController = require("./controllers/product");
+const userController = require("./controllers/user");
+
 require("dotenv").config({path:"./config/keys.env"});
 
 const app = express();
@@ -14,10 +19,7 @@ app.use(express.static("public"));
 //Parse application
 app.use(bodyParser.urlencoded({ extended: false }));
 
-//load controllers
-const generalController = require("./controllers/general");
-const productController = require("./controllers/product");
-const userController = require("./controllers/user");
+
 
 app.use("/", generalController);
 app.use("/user", userController);

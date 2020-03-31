@@ -1,7 +1,37 @@
 <section class="products">
   
     <div class="product-nav">
-        <p>Electronics & Accessories</p>
+        <div id="productSearch">
+            <form method="POST" action="/products/list">
+
+                <label>Product list</label>
+                <br><br>
+                <select name="productList">
+                    <option value="All-products">All Products</option>
+                    <option value="Cosmetics">Beauty and Personal Care</option>
+                    <option value="Electronics">Electronics & Accessories</option>
+                    <option value="Clothes">Clothes and Shoes</option>
+                    <option value="Home">Home and Kitchen</option>
+                </select>
+                <br><br>
+
+                <input type="submit" value="Search">
+
+            </form>
+        </div>
+
+        <div id="addProduct">
+            <form method="POST" action="/products/list">
+
+                <label>Add Product</label>
+                <br><br>
+
+                <input type="submit" value="Add Product">
+
+            </form>
+        </div>
+
+        {{!-- <p>Electronics & Accessories</p>
         
         <nav>
             <div>
@@ -12,7 +42,8 @@
                 <p><a href="">Headphones</a></li>
 
             </div>
-        </nav>
+        </nav> --}}
+
     </div>
 
     <div class="pro-products">
