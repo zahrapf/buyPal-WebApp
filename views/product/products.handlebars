@@ -6,7 +6,7 @@
 
                 <label>Product list</label>
                 <br><br>
-                <select name="productList">
+                <select class="productList" name="productList">
                     <option value="All-products">All Products</option>
                     <option value="Cosmetics">Beauty and Personal Care</option>
                     <option value="Electronics">Electronics & Accessories</option>
@@ -15,12 +15,12 @@
                 </select>
                 <br><br>
 
-                <input type="submit" value="Search">
+                <input id="searchbtn" type="submit" value="Search">
 
             </form>
         </div>
 
-        <div id="addProduct">
+        {{!-- <div id="addProduct">
             <form method="POST" action="/products/list">
 
                 <label>Add Product</label>
@@ -29,7 +29,7 @@
                 <input type="submit" value="Add Product">
 
             </form>
-        </div>
+        </div> --}}
 
         {{!-- <p>Electronics & Accessories</p>
         

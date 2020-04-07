@@ -1,6 +1,9 @@
 const express = require('express');
 const router = express.Router();
-const registerModel = require("../models/userRegistration");
+const userModel = require("../models/userRegistration");
+const bcrypt = require("bcryptjs");
+const isAuthenticated = require("../middleware/authentication");
+const dashBoardLoader = require("../middleware/authorization");
 
 router.get("/registration", (req,res)=>{
     res.render("user/register", {
@@ -8,12 +11,16 @@ router.get("/registration", (req,res)=>{
         headingInfo: "buyPal"
     });
 });
-router.get("/dashboard", (req,res)=>{
-    res.render("user/dashboard", {
-        title: "Register: buyPal.ca",
+
+router.get("/dashboardRegister", (req,res)=>{
+    res.render("user/dashboardRegister", {
+        title: "registerDashboard: buyPal.ca",
         headingInfo: "buyPal",
     });
 });
+
+router.get("/profile", isAuthenticated, dashBoardLoader);
+
 router.post("/registration", (req,res)=>{
     const firstnameError = [];
     const lastnameError = [];
@@ -75,7 +82,7 @@ router.post("/registration", (req,res)=>{
             password: req.body.password
         }
 
-        const user = new registerModel(newUser);
+        const user = new userModel(newUser);
 
         user.save()
         .then(()=> {
@@ -98,7 +105,7 @@ router.post("/registration", (req,res)=>{
             };
             sgMail.send(msg)
             .then(()=>{
-                res.redirect("/user/dashboard"); 
+                res.redirect("/user/dashboardRegister"); 
             })
             .catch(err =>{
                 console.log(err);
@@ -119,6 +126,7 @@ router.get("/login", (req,res)=>{
 router.post("/login", (req,res)=>{
     const emailError = [];
     const passwordError = [];
+    const errorMsg = [];
 
     if(req.body.email === "" || req.body.email === null || req.body.email.length === 0){
         emailError.push("Enter your Email");
@@ -140,9 +148,55 @@ router.post("/login", (req,res)=>{
         });
         
     }else{
-        res.redirect("/user/dashboard"); 
+
+        userModel.findOne({email:req.body.email})
+        .then(user=>{
+
+            if(user == null){
+                errorMsg.push("Sorry, you entered the wrong email and/or password");
+                    res.render("user/login", {
+                        title: "Login: buyPal.ca",
+                        headingInfo: "buyPal",
+                        errorMsg
+                    });
+
+            }else{
+                
+                bcrypt.compare(req.body.password, user.password)
+                .then(matched => {
+
+                    if(matched){
+                        
+                        req.session.userInfo = user;
+                        res.redirect("/user/profile"); 
+
+                    }else{
+                        
+                        errorMsg.push("Sorry, you entered the wrong email and/or password");
+                        res.render("user/login", {
+                            title: "Login: buyPal.ca",
+                            headingInfo: "buyPal",
+                            errorMsg
+                        });
+                    }
+
+                })
+                .catch(err=>console.log(`${err} occured while finding the password in the database!`))
+
+            }
+        })
+        .catch(err=>console.log(`${err} occured while finding the email in the database!`))
+
+
+
+        
     }
 });
 
+router.get("/logout", (req,res) => {
+
+    req.session.destroy();
+    res.redirect("/user/login");
+});
 
 module.exports=router;

@@ -29,6 +29,11 @@ const registrationSchema = new Schema({
     {
         type: Date,
         default: Date.now()
+    },
+    type:
+    {
+        type: String,
+        default: "User"
     }
 });
 
@@ -51,5 +56,5 @@ registrationSchema.pre("save", function(next)
 })
 
 
-const registerModel = mongoose.model('Registered_user', registrationSchema);
-module.exports=registerModel;
+const userModel = mongoose.model('Registered_user', registrationSchema);
+module.exports=userModel;

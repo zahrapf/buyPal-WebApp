@@ -54,20 +54,22 @@ main{
 } 
 .categories{
     display: grid;
+    justify-content: center;
     grid-template-columns: repeat(2, 40%);
     grid-column-gap: 4em;
     margin-top: 30px; 
-    padding-left: 180px;
+    /* padding-left: 180px; */
 }
 .category{
     display: grid;
+    justify-content: center;
     background-color: rgb(247, 247, 247);
     margin-top: 20px;
     margin-bottom: 20px;
 }
 .category div{
     margin: 10px;
-    padding-left: 40px;
+    /* padding-left: 40px; */
 }
 .category > div > a{
     text-decoration: none;
@@ -110,9 +112,10 @@ main{
 }
 .bsSeller{
     display: grid;
+    justify-content: center;
     grid-template-columns: repeat(10, 1fr);
     height: 200px;
-    padding-left: 40px;
+    /* padding-left: 40px; */
 } 
 .bsSeller div{
     margin-top: 10px;
@@ -143,11 +146,21 @@ footer > div > p > a{
     grid-template-columns: 1fr 4fr;
 }
 .product-nav{
-    margin-top: 30px;
-    margin-left: 5px;
+    display: grid;
+    justify-content: center;
+    margin-top: 60px;
     font-family: 'Barlow', sans-serif;
+    font-size: 1.5em;
 }
-.product-nav > p{
+.productList{
+    font-family: 'Barlow', sans-serif;
+    font-size: .8em;
+}
+#searchbtn{
+    font-size: .8em;
+    width: 80px;
+}
+/* .product-nav > p{
     font-size: 1.2em;
     padding-left: 15px;
 }
@@ -165,8 +178,8 @@ footer > div > p > a{
 }
 .product-nav > nav > div > p > a:hover{
     cursor: pointer;
-    font-weight: bold;
-}
+    font-weight: bold; 
+} */
 .pro-products{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -188,10 +201,12 @@ footer > div > p > a{
     font-weight: bold;
 }
 .register-form{
+    display: grid;
+    justify-content: center;
     background-image: url(/img/reg_log.jpg);
     background-size: cover; 
     font-family: 'Open Sans', sans-serif;   
-    padding-left: 340px;
+    /* padding-left: 340px; */
 }
 .invalid{
     border: 1px solid red;
@@ -199,16 +214,17 @@ footer > div > p > a{
 .register{
     display: grid;
     grid-template-columns: auto;
-    margin-bottom: 15px;
+    justify-content: center;
     background-color: #ffffffab;
     border: 1px solid grey;
-    width: 700px;
+    margin-bottom: 15px;
     margin-top: 30px;
-    margin-left: 10px;
+    /* margin-left: 10px; */
     padding-top: 20px;
-    padding-left: 15px;
+    width: 700px;
+    /* padding-left: 15px; */
     box-shadow: 15px 10px 10px gray; 
-    margin-left: 10px;
+    /* margin-left: 10px; */
         
 }
 .register div{
@@ -219,7 +235,7 @@ footer > div > p > a{
     color: rgb(68, 141, 210);
 }
 #reg-log{
-    margin: 20px 0 30px 65px;
+    margin: 10px 0 30px 50px;
     font-family: 'Open Sans', sans-serif;
     text-align: center;
     width: 600px;
@@ -240,7 +256,7 @@ footer > div > p > a{
 }
 .register input{
     margin-left: 10px;
-    width: 620px;
+    
     padding: 10px;
 }
 .register p{
@@ -248,25 +264,29 @@ footer > div > p > a{
     font-size: .8em;
 }
 #submitbtn{
+    width: 620px;
     margin-top: 30px;
     margin-bottom: 15px;
 }
 .login-form{
+    display: grid;
+    justify-content: center;
     font-family: 'Open Sans', sans-serif;
     background-image: url(/img/reg_log.jpg);
     background-size: cover; 
-    padding-left: 400px;
+    /* padding-left: 400px; */
 }
 .login{
     display: grid;
+    justify-content: center;
     grid-template-columns: auto;
     background-color: #ffffffab;
     border: 1px solid grey;
     width: 600px;
     margin-top: 60px;
-    margin-left: 10px;
+    /* margin-left: 10px; */
     padding-top: 15px;
-    padding-left: 15px;
+    /* padding-left: 15px; */
     box-shadow: 15px 10px 10px gray;        
 }
 .login label{
@@ -275,7 +295,7 @@ footer > div > p > a{
 .login input{
     margin-left: 10px;
     margin-bottom: 10px;
-    width: 500px;
+    
     padding: 10px;
 }
 .login legend{
@@ -295,8 +315,11 @@ footer > div > p > a{
     text-decoration: none;
     color: rgb(68, 141, 210);
 }
+#loginbtn{
+    width: 500px;
+}
 #log-reg{
-    margin: 20px 0 20px 65px;
+    margin: 20px 0 20px 50px;
     border-top: 1px solid black;
     width: 500px;
     text-align: center;
@@ -337,7 +360,7 @@ footer > div > p > a{
     font-size: 1.25em;
 }
 
-@media only screen and (max-width: 1300px) {
+/* @media only screen and (max-width: 1300px) {
     h1{
         padding-top: 40px;
         padding-left: 50px;
@@ -728,7 +751,7 @@ footer > div > p > a{
         margin-bottom: 0px;
     }
    
-}
+} */
 
 /* @media (max-width: 575.98px) { ... }
 
