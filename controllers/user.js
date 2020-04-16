@@ -27,6 +27,7 @@ router.post("/registration", (req,res)=>{
     const emailError = [];
     const passwordError = [];
     const passwordAgainError = [];
+    const existenceEmail = [];
 
     if(req.body.firstName==="" || req.body.firstName=== null || req.body.firstName.length===0){
         firstnameError.push("Enter your first name");
@@ -54,7 +55,27 @@ router.post("/registration", (req,res)=>{
         passwordAgainError.push("Your password does not match")
     }
 
-    if(firstnameError.length > 0 || lastnameError.length > 0 || emailError.length > 0 || passwordError.length > 0 || passwordAgainError.length > 0){
+    userModel.find()
+    .then((users) =>{
+        for(let i = 0; i < users.length; i++){
+            if(users[i].email == req.body.email){
+                existenceEmail.push("This email already exist! Please login or enter another email address.");
+                res.render("user/register", {
+                    title: "Register: buyPal.ca",
+                    headingInfo: "buyPal",
+                    firstnameErrorMsg: firstnameError,
+                    lastnameErrorMsg: lastnameError,
+                    emailErrorMsg: existenceEmail,
+                    user_firstName: req.body.firstName,
+                    user_lastName: req.body.lastName
+                });
+            }
+        }
+
+    })
+    .catch(err=>console.log(`Error happened when finding user in database :${err}`));
+
+    if(firstnameError.length > 0 || lastnameError.length > 0 || emailError.length > 0 || existenceEmail.length > 0 || passwordError.length > 0 || passwordAgainError.length > 0){
        
         res.render("user/register", {
             title: "Register: buyPal.ca",
@@ -70,8 +91,7 @@ router.post("/registration", (req,res)=>{
             user_password: req.body.password
         });
         
-        
-
+    
     }else{
 
         const newUser = 

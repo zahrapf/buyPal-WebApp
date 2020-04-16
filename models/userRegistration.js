@@ -17,8 +17,7 @@ const registrationSchema = new Schema({
     email:
     {
         type: String,
-        required: true,
-        unique: true
+        required: true
     },
     password:
     {
@@ -53,7 +52,7 @@ registrationSchema.pre("save", function(next)
     .catch(err=>console.log(`${err} occured when salting!`));
 
 
-})
+});
 
 
 const userModel = mongoose.model('Registered_user', registrationSchema);

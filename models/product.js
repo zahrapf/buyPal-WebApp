@@ -1,63 +1,48 @@
-const product=
-{
-    productArr:[],
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
-    init()
+
+const productSchema = new Schema({
+    productName:
     {
-        this.productArr.push({
-            img: '/img/macbook.jpg',
-            title: 'MacBook',
-            price: 'Starts from $1200',
-            category: 'Computers & Accessories',
-            bestSeller: false
-        });
-
-        this.productArr.push({
-            img: '/img/headphone.jpg',
-            title: 'Sony Headphone',
-            price: '$50',
-            category: 'Headphones',
-            bestSeller: true
-        });
-
-        this.productArr.push({
-            img: '/img/mouse.jpg',
-            title: 'Apple Mouse',
-            price: '$110',
-            category: 'Accessories & Supplies',
-            bestSeller: true
-        });
-
-        this.productArr.push({
-            img: '/img/airpod.jpg',
-            title: 'Apple Airpod',
-            price: '$120',
-            category: 'Headphones',
-            bestSeller: false
-        });
-
-        this.productArr.push({
-            img: '/img/remoteControl.jpg',
-            title: 'Remote Control',
-            price: '$35',
-            category: 'Accessories & Supplies',
-            bestSeller: true
-        });
-
-        this.productArr.push({
-            img: '/img/iphone.jpg',
-            title: 'Apple iphone',
-            price: 'Starts from $900',
-            category: 'Phones & Accesories',
-            bestSeller: false
-        });
+        type:String,
+        required: true
     },
-
-    getAllProduct()
+    productPrice:
     {
-        return this.productArr;
+        type: String,
+        required: true
+    },
+    productDescription:
+    {
+        type: String
+    },
+    productCategory:
+    {
+        type: String,
+        required: true
+    },
+    productQuantity:
+    {
+        type: String,
+        required: true
+    },
+    bestSeller:
+    {
+        type: String,
+        required: true
+    },
+    productPhoto:
+    {
+        type: String  
+    },
+    dateCreated:
+    {
+        type: Date,
+        default: Date.now()
     }
-}
+});
 
-product.init();
-module.exports = product; 
+const productModel = mongoose.model('Product_list', productSchema);
+module.exports=productModel;
+

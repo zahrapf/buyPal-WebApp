@@ -1,0 +1,36 @@
+ <section class="oneProduct">   
+    <div class="oneProductImg">    
+        
+        <img src="/img/{{this.productPhoto}}" alt="" width="500px" height="450px">
+        
+    </div> 
+
+    <div class="oneProductInfo">
+        <div class="productTitle">
+            {{this.productName}}
+        </div>
+        <div>
+           Price: ${{this.productPrice}}
+        </div>
+        <div>
+            {{this.productDescription}}
+        </div>
+
+        <label>Quantity</label>
+        <select name="quantityOrderd">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+        <br>
+        <br>
+        <div class="button" >
+            <a href="/products/list/userShoppingCart/{{_id}}">Add to Cart</a><br>
+            {{!-- <form method="POST" action="/products/list/userShoppingCart/{{_id}}">
+                <input type="submit" value="Add to Cart">
+            </form> --}}
+        </div>
+    </div>   
+</section>  

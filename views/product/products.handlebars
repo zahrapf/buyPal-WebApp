@@ -6,12 +6,11 @@
 
                 <label>Product list</label>
                 <br><br>
-                <select class="productList" name="productList">
-                    <option value="All-products">All Products</option>
-                    <option value="Cosmetics">Beauty and Personal Care</option>
-                    <option value="Electronics">Electronics & Accessories</option>
-                    <option value="Clothes">Clothes and Shoes</option>
-                    <option value="Home">Home and Kitchen</option>
+                <select class="productList" name="productCategory">
+                    <option value="Beauty and Personal Care">Beauty and Personal Care</option>
+                    <option value="Electronics & Accessories">Electronics & Accessories</option>
+                    <option value="Clothes and Shoes">Clothes and Shoes</option>
+                    <option value="Home and Kitchen">Home and Kitchen</option>
                 </select>
                 <br><br>
 
@@ -19,17 +18,6 @@
 
             </form>
         </div>
-
-        {{!-- <div id="addProduct">
-            <form method="POST" action="/products/list">
-
-                <label>Add Product</label>
-                <br><br>
-
-                <input type="submit" value="Add Product">
-
-            </form>
-        </div> --}}
 
         {{!-- <p>Electronics & Accessories</p>
         
@@ -50,29 +38,30 @@
         {{#each product}}
             <div>
                 <div>
-                    <img src="{{this.img}}" alt="" width="250px" height="250px">
+                    <img src="/img/{{this.productPhoto}}" alt="" width="250px" height="250px">
                 </div>
                 <div id="productTitle">
-                    {{this.title}}
+                    {{this.productName}}
                 </div>
                 <div>
-                    {{this.price}}
+                    ${{this.productPrice}}
                 </div>
                 <div>
-                    {{this.category}}
+                    {{this.productCategory}}
                 </div>
-                <div>
-                    {{this.bs}}
+                <div id="bsCon">
+                    {{this.bestSeller}}
                 </div>
-                <div>
+                {{!-- <div>
                     
                     {{#if this.bestSeller}}
                     <p id="bsCon">Best Seller</p>
                     {{else}}
                     <p></p><br>
                     {{/if}}
-                </div>
-                <div class="addCart"><a href=" ">Add to cart</a></div> 
+                </div> --}}
+                
+                <div class="addCart"><a href="/products/list/{{this.id}}">See more</a></div> 
             </div>
         {{/each}}
     </div>

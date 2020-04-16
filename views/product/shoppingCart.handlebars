@@ -1,0 +1,31 @@
+<section class="userShppoingCart">
+    <div class="cartProducts">
+        {{#each product}}
+            <div class="cartProduct">
+                <div class="cartOrderImg">
+                    
+                        <img src="/img/{{this.productPhoto}}" alt="" width="150px" height="150px">
+                
+                </div>
+                <div class="cartOrderInfo">
+                    <div id="productTitle">
+                        {{this.productName}}
+                    </div>
+                    <div>
+                        ${{this.productPrice}}
+                    </div>
+                    {{!-- <div>
+                        {{this.quantity}}
+                    </div> --}}    
+                </div>
+
+            </div>
+        {{/each}}
+    </div>
+    <div class="button cartBtn">
+        <a href="/products/shoppingCart/?method=DELETE">Place your Order</a><br>
+    </div>
+
+
+
+</section>

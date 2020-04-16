@@ -1,0 +1,58 @@
+
+<form class="addProduct" method="POST" action ="/products/add_product" enctype="multipart/form-data">
+    <br> <legend>Add Product</legend><br> 
+
+    <label for="productName">Product Name</label> 
+    {{#if productnameErrorMsg}}
+    <input type="text" class="invalid" id="productName" name="productName" value={{product_name}}><br>
+    <p class="error">{{productnameErrorMsg}}</p>
+    {{else}}
+    <input type="text" id="productName" name="productName" value={{product_name}}><br><br> 
+    {{/if}}
+
+    <label for="productPrice">Product Price</label> 
+    {{#if productPriceErrorMsg}}
+    <input type="text" class="invalid" id="productPrice" name="productPrice" value={{product_price}}><br> 
+    <p class="error">{{productPriceErrorMsg}}</p>
+    {{else}}
+    <input type="text" id="productPrice" name="productPrice" value={{product_price}}><br><br>  
+    {{/if}}
+
+    <label for="productDescription">Product Description</label><br>   
+    <textarea type="text" id="productDescription" name="productDescription" rows="6" cols="20"></textarea><br><br> 
+
+    <label for="productCategory">Product Category</label>   
+    {{#if productCategoryErrorMsg}}
+    <input type="text" class="invalid" id="productCategory" name="productCategory" value={{product_category}}><br> 
+    <p class="error">{{productCategoryErrorMsg}}</p>
+    {{else}}
+    <input type="text" id="productCategory" name="productCategory" value={{product_category}}><br><br> 
+    {{/if}}
+
+    <label for="productQuantity">Product Quantity</label>   
+    {{#if productQuantityErrorMsg}}
+    <input type="text" class="invalid" id="productQuantity" name="productQuantity" value={{product_quantity}}><br>
+    <p class="error">{{productQuantityErrorMsg}}</p>
+    {{else}}
+    <input type="text" id="productQuantity" name="productQuantity" value={{product_quantity}}><br><br> 
+    {{/if}}
+
+    <label for="bestSeller">Best Seller</label>    
+    <select name="bestSeller">
+        <option value="Best Seller" >Yes</option>
+        <option value=" " >No</option>
+    </select><br><br>  
+
+
+    <label>Product Photo:</label>
+    
+    {{#if productImgError}}
+    <input type="file" class="invalid" name="productPhoto" id="productPhoto" accept="image/*"><br><br>
+    <div class="error">{{productImgError}}</div><br>
+    {{else}}
+    <input type="file" name="productPhoto" id="productPhoto" accept="image/*"><br><br> 
+    {{/if}}
+
+    <input type="submit" value="Add product"><br><br>  
+        
+</form>

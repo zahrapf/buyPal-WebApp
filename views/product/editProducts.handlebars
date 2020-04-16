@@ -1,0 +1,53 @@
+<table border="1" style="text-align: center;">
+        <thead>
+                <th>Product Name</th>
+                <th>Product Price</th>
+                <th>Product Category</th>
+                <th>Product Quantity</th>
+                <th>Best Seller</th>
+                <th>Product Photo</th>
+                <th>Product Description</th>
+                <th>Operations</th>
+        </thead>
+        <tbody>
+            {{#each product}}
+                <tr>
+                   <td>
+                        <span>{{this.productName}}</span>
+                   </td>
+                   <td>
+                       <span>{{this.productPrice}}</span>
+                      
+                   </td>
+                   <td>
+                        <span>{{this.productCategory}}</span>
+                   </td>
+                   <td>
+                       <span>{{this.productQuantity}}</span>
+                   </td>
+                   <td>
+                       <span>{{this.bestSeller}}</span>
+                   </td>
+                    <td>
+                       <img src="/img/{{this.productPhoto}}" alt="" width="50px" height="50px">
+                   </td>
+                    <td>
+                       <span>{{this.productDescription}}</span>
+                   </td>
+                   <td>
+                        <a href="/products/edit/{{this.id}}">Edit</a><br>
+                        <a href="/products/delete/{{this.id}}?method=DELETE">Delete</a>
+                   </td> 
+                </tr>
+
+                {{else}}
+                    <td colspan="7">
+                        <p>No tasks in the database</p>
+                    </td>
+
+                {{/each}}
+    </tbody>
+</table>
+<br><br>
+<div>Want to <a href="/products/add_product">Add a product</a></div>
+<br><br>
