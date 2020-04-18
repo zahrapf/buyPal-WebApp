@@ -156,26 +156,6 @@ footer > div > p > a{
     font-size: .8em;
     width: 80px;
 }
-/* .product-nav > p{
-    font-size: 1.2em;
-    padding-left: 15px;
-}
-.product-nav > nav > div{
-    margin-top: 5px;
-    margin-left: 30px;
-}
-.product-nav > nav > div > p {
-    padding: 5px;
-    
-}
-.product-nav > nav > div > p > a{
-    text-decoration: none;
-    color: black;
-}
-.product-nav > nav > div > p > a:hover{
-    cursor: pointer;
-    font-weight: bold; 
-} */
 .pro-products{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -203,7 +183,6 @@ footer > div > p > a{
     background-image: url(/img/reg_log.jpg);
     background-size: cover; 
     font-family: 'Open Sans', sans-serif;   
-    /* padding-left: 340px; */
 }
 .invalid{
     border: 1px solid red;
@@ -216,13 +195,9 @@ footer > div > p > a{
     border: 1px solid grey;
     margin-bottom: 15px;
     margin-top: 30px;
-    /* margin-left: 10px; */
     padding-top: 20px;
     width: 700px;
-    /* padding-left: 15px; */
-    box-shadow: 15px 10px 10px gray; 
-    /* margin-left: 10px; */
-        
+    box-shadow: 15px 10px 10px gray;     
 }
 .register div{
     margin: 10px 0px 18px 13px;
@@ -271,7 +246,6 @@ footer > div > p > a{
     font-family: 'Open Sans', sans-serif;
     background-image: url(/img/reg_log.jpg);
     background-size: cover; 
-    /* padding-left: 400px; */
 }
 .login{
     display: grid;
@@ -281,9 +255,7 @@ footer > div > p > a{
     border: 1px solid grey;
     width: 600px;
     margin-top: 60px;
-    /* margin-left: 10px; */
     padding-top: 15px;
-    /* padding-left: 15px; */
     box-shadow: 15px 10px 10px gray;        
 }
 .login label{
@@ -320,8 +292,7 @@ footer > div > p > a{
     border-top: 1px solid black;
     width: 500px;
     text-align: center;
-    padding-top: 10px;  
-    
+    padding-top: 10px;      
 }
 #log-reg > a{
     text-decoration: none;
@@ -347,7 +318,6 @@ footer > div > p > a{
 }
 .dashboard > div > a{
     cursor: pointer;
-
 }
 #dashboardHeading{
     font-size: 2.2em;
@@ -418,10 +388,6 @@ footer > div > p > a{
     display: grid;
     grid-template-columns: .2fr .4fr .3fr;
 }
-/* table.editTable {
-    margin-top: 20px;
-    margin-bottom: 20px;
-} */
 .editProducts{
     font-family: 'Open Sans', sans-serif;
     margin-top: 20px;
@@ -635,18 +601,18 @@ footer > div > p > a{
         grid-column-gap: .5em;
     }
    .cartOrderImg > img{
-    width: 100px;
-    height: 100px;
+        width: 100px;
+        height: 100px;
    }
    .cartproductsPrice{
-    grid-template-columns: auto;
-    grid-row-gap: 1em;
-    margin-top: 0;
+        grid-template-columns: auto;
+        grid-row-gap: 1em;
+        margin-top: 0;
    }
    .oneProduct{
-    grid-template-columns: auto;
-    margin-top: 40px;
-    margin-bottom: 140px;
+        grid-template-columns: auto;
+        margin-top: 40px;
+        margin-bottom: 140px;
    }
    .oneProductImg > img{
        width: 250px;
@@ -657,9 +623,9 @@ footer > div > p > a{
        margin-bottom: 20px;
    }
    #addProducts{
-    margin-left: 10px;
-    margin-top: 50px;
-    margin-bottom: 50px;
+        margin-left: 10px;
+        margin-top: 50px;
+        margin-bottom: 50px;
     }
 }
 @media (max-width: 770px) {
@@ -754,16 +720,16 @@ footer > div > p > a{
         grid-column-gap: .5em;
     }
    .cartOrderImg > img{
-    width: 100px;
-    height: 100px;
+        width: 100px;
+        height: 100px;
    }
    .cartproductsPrice{
-    grid-template-columns: auto;
-    grid-row-gap: 1em;
-    margin-top: 0;
+        grid-template-columns: auto;
+        grid-row-gap: 1em;
+        margin-top: 0;
    }
    .oneProduct{
-    grid-template-columns: auto;
+        grid-template-columns: auto;
    }
    .oneProductImg > img{
        width: 250px;
@@ -772,10 +738,8 @@ footer > div > p > a{
    .oneProductInfo{
        margin-top: 0;
        margin-bottom: 20px;
-   }
-  
+   }  
 } 
-
 @media (max-width: 575.98px){
     header{
         width: 100%;
@@ -898,16 +862,16 @@ footer > div > p > a{
         grid-column-gap: .5em;
     }
    .cartOrderImg > img{
-    width: 100px;
-    height: 100px;
+        width: 100px;
+        height: 100px;
    }
    .cartproductsPrice{
-    grid-template-columns: auto;
-    grid-row-gap: 1em;
-    margin-top: 0;
+        grid-template-columns: auto;
+        grid-row-gap: 1em;
+        margin-top: 0;
    }
    .oneProduct{
-    grid-template-columns: auto;
+        grid-template-columns: auto;
    }
    .oneProductImg > img{
        width: 250px;
