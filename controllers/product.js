@@ -204,7 +204,7 @@ router.get("/edit_product", isAuthenticated, isAdministrator, (req,res)=>{
         });
 
         res.render("product/editProducts", {
-            title: "registerDashboard: buyPal.ca",
+            title: "edirProduct: buyPal.ca",
             headingInfo: "buyPal",
             product: AllProduct
         });
@@ -225,6 +225,8 @@ router.get("/edit/:id", isAuthenticated, isAdministrator,(req,res)=>{
             bestSeller,
             productPhoto} = product;
         res.render("product/editProductForm",{
+            title: "editProduct: buyPal.ca",
+            headingInfo: "buyPal",
             _id,
             productName,
             productPrice,
@@ -270,7 +272,8 @@ router.delete("/delete/:id", isAuthenticated, isAdministrator, (req,res)=>{
     .catch(err=>console.log(`Error happened when deleting data from the database :${err}`));
 
 });
-router.get("/list/userShoppingCart/:id", isAuthenticated, (req,res) => {
+router.post("/list/userShoppingCart/:id", isAuthenticated, (req,res) => {
+   
     productModel.findById(req.params.id)
     .then((product)=>{
 
@@ -298,49 +301,61 @@ router.get("/list/userShoppingCart/:id", isAuthenticated, (req,res) => {
     
 });
 router.get("/user_Shopping_Cart/:id", isAuthenticated, (req,res) => {
-    
+    let price;
+    let totalPrice = 0;
     userShopsModel.find({userId:req.session.userInfo._id})
     .then((products)=>{
   
         const AllProduct = products.map(product=>{
+
+            price = (product.productPrice)*(product.quantityOrderd);
+            totalPrice += price;
 
             return {
 
                 productName: product.productName,
                 productPrice: product.productPrice,
                 productPhoto : product.productPhoto,
-                id: req.session.userInfo._id
+                quantityOrderd: product.quantityOrderd,
+                id: req.session.userInfo._id,
+                price: price
             }
         });
 
         res.render("product/shoppingCart", {
-            title: "registerDashboard: buyPal.ca",
+            title: "shoppingCart: buyPal.ca",
             headingInfo: "buyPal",
-            product: AllProduct
+            product: AllProduct,
+            totalPrice: totalPrice
         });
     })
     .catch(err=>console.log(`Error happened when pulling from the database :${err}`));  
     
 });
 router.delete("/shoppingCart/", isAuthenticated, (req,res)=>{
-    //const orders = [];
-    //const quantity = [];
+    let orders = [];
+    let totalPrice = 0;
 
     userShopsModel.find({userId:req.session.userInfo._id})
     .then((products)=>{
-        
         
         const orders = products.map(product=>{
 
             return {
 
                 productName: product.productName,
-                productQuantity: product.quantityOrderd
+                productQuantity: product.quantityOrderd,
+                productsPrice: product.productPrice
             }
         });
-       
-        console.log(`product is: ${products}`);
-        console.log(`orders is: ${orders}`);
+
+        for(let i = 0; i < products.length; i++){
+            
+            let price = products[i].quantityOrderd * products[i].productPrice;
+            totalPrice += price;
+            orders[i] = " " + products[i].quantityOrderd + " " + products[i].productName + " with the total price of CAD$ " + price;
+        }
+
         userShopsModel.deleteMany({userId:req.session.userInfo._id})
         .then(()=>{
             
@@ -352,11 +367,12 @@ router.delete("/shoppingCart/", isAuthenticated, (req,res)=>{
             from: 'zp.fakhar9675@gmail.com',
             subject: 'Your BuyPal order',
             html: `Hi ${firstName}, <br><br>
-                Thank you for shopping with use!<br><br>
-                You orderes, ${orders} whith the price of. <br> <br>
-                Regards,<br><br>
+                Thank you for shopping with us!<br><br>
+                You ordere(s) including: ${orders} has been received. <br> <br>
+                The total cost of CAD$ ${totalPrice} reflected on your account.<br><br>
+                Regards,<br>
                 buyPal Team
-                `,
+                `
             };
             sgMail.send(msg)
             .then(()=>{
@@ -367,7 +383,6 @@ router.delete("/shoppingCart/", isAuthenticated, (req,res)=>{
             })  
         })
     })
-    
     .catch(err=>console.log(`Error happened when deleting data from the database :${err}`));
 
 });

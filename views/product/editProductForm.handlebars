@@ -1,30 +1,29 @@
-<form class="addProduct" method="POST" action="/products/update/{{_id}}?method=PUT" enctype="multipart/form-data">
-    <br> <legend>Add Product</legend><br> 
+<div class="addproduct">
+    <form class="editProductForm" method="POST" action="/products/update/{{_id}}?method=PUT" enctype="multipart/form-data">
+        <br> <legend>Edit Product</legend><br> 
 
-    <label for="productName">Product Name</label>
-    <input type="text" id="productName" name="productName" value={{productName}}><br><br> 
+        <label for="productName">Product Name</label>
+        <input type="text" id="productName" name="productName" value={{productName}}><br><br> 
 
-    <label for="productPrice">Product Price</label> 
-    <input type="text" id="productPrice" name="productPrice" value={{productPrice}}><br><br>  
-  
-    <label for="productDescription">Product Description</label><br>   
-    <textarea type="text" id="productDescription" name="productDescription" rows="6" cols="20">{{productDescription}}</textarea><br><br> 
+        <label for="productPrice">Product Price</label> 
+        <input type="text" id="productPrice" name="productPrice" value={{productPrice}}><br><br>  
+    
+        <label for="productDescription">Product Description</label><br>   
+        <textarea type="text" id="productDescription" name="productDescription" rows="6" cols="20">{{productDescription}}</textarea><br><br> 
 
-    <label for="productCategory">Product Category</label>   
-    <input type="text" id="productCategory" name="productCategory" value={{productCategory}}><br><br> 
+        <label for="productCategory">Product Category</label>   
+        <input type="text" id="productCategory" name="productCategory" value={{productCategory}}><br><br> 
 
-    <label for="productQuantity">Product Quantity</label>   
-    <input type="text" id="productQuantity" name="productQuantity" value={{productQuantity}}><br><br> 
+        <label for="productQuantity">Product Quantity</label>   
+        <input type="text" id="productQuantity" name="productQuantity" value={{productQuantity}}><br><br> 
 
-    <label for="bestSeller">Best Seller</label>    
-    <select name="bestSeller" value={{bestSeller}}>
-        <option value="Best Seller" {{#ifEquals bestSeller "Best Seller" }} selection {{/ifEquals}}>Yes</option>
-        <option value=" " {{#ifEquals bestSeller " " }} selection {{/ifEquals}}>No</option>
-    </select><br><br>  
+        <label for="bestSeller">Best Seller</label>    
+        <select name="bestSeller" value={{bestSeller}}>
+            <option value="Best Seller">Yes</option>
+            <option value=" ">No</option>
+        </select><br><br>  
 
-    {{!-- <label>Product Photo:</label>
-    <input type="file" name="productPhoto" id="productPhoto"><br><br>  --}}
-
-    <input type="submit" value="Edit product"><br><br>  
-        
-</form>
+        <input type="submit" value="Edit product"><br><br>  
+            
+    </form>
+</div>

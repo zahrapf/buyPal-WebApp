@@ -21,7 +21,7 @@
                     <img src="{{this.img}}" alt="" width="400px" height="400px">
                     
                 </div>  
-                <div><a href=" ">See more</a></div>  
+                <div><a href="/products/list">See more</a></div>  
             </div>
         {{/each}}
     </div>
@@ -31,7 +31,7 @@
         <div class="bsSeller">
             {{#each bestSellerProduct}}
                 <div>
-                    <img src="/img/{{this.productPhoto}}" alt="" width="250px" height="200px">
+                    <a href="/products/list/{{this.id}}"><img src="/img/{{this.productPhoto}}" alt="" width="250px" height="200px"></a>
                 </div>
             {{/each}}
         </div>

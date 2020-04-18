@@ -1,10 +1,15 @@
 <section class="userShppoingCart">
-    <div class="cartProducts">
+    <div id="productSum">
+        <div>Order(s) Information</div>
+        <div>Order(s) Summary</div>
+    </div>
+    <div class="cartProductsInfo">
+        
         {{#each product}}
             <div class="cartProduct">
                 <div class="cartOrderImg">
                     
-                        <img src="/img/{{this.productPhoto}}" alt="" width="150px" height="150px">
+                    <img src="/img/{{this.productPhoto}}" alt="" width="150px" height="150px">
                 
                 </div>
                 <div class="cartOrderInfo">
@@ -14,18 +19,26 @@
                     <div>
                         ${{this.productPrice}}
                     </div>
-                    {{!-- <div>
-                        {{this.quantity}}
-                    </div> --}}    
+                    <div>
+                        Quantity: {{this.quantityOrderd}}
+                    </div>    
                 </div>
-
+                <div>
+                        Item(s): {{this.quantityOrderd}}: CDN $ {{this.price}}
+                </div>
             </div>
         {{/each}}
     </div>
-    <div class="button cartBtn">
-        <a href="/products/shoppingCart/?method=DELETE">Place your Order</a><br>
-    </div>
 
+    <div class="cartproductsPrice">
+        
+        <div class="cartButton cartBtn">
+            <a href="/products/shoppingCart/?method=DELETE">Place your Order</a><br>
+        </div>
+        <div>
+           <p> Order Total: CDN $ {{totalPrice}}</p>
+        </div>
+    </div>
 
 
 </section>

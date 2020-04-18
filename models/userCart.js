@@ -30,7 +30,7 @@ const userCartSchema = new Schema({
     quantityOrderd:
     {
         type: String,
-       // required: true
+        required: true
     },
     dateCreated:
     {

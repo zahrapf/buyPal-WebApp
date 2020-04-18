@@ -183,6 +183,7 @@ footer > div > p > a{
 .pro-products{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
     font-family: 'Open Sans', sans-serif;
     grid-gap: 15px;
     padding: 30px;
@@ -386,7 +387,7 @@ footer > div > p > a{
     width: 50px;
     height: 25px;
 }
-.button a{
+.cartButton a{
     background-color: #0070c9;
     background: linear-gradient(#42a1ec,#0070c9);
     border: 1px solid #07c;
@@ -400,25 +401,73 @@ footer > div > p > a{
     font-family: 'Open Sans', sans-serif;
     font-size: 1.1em;
     display: grid;
-    grid-template-rows: 5fr 1fr;
+    grid-template-rows: .5fr 5fr 1fr;
     grid-row-gap: 1em;
     margin: 20px;
 }
-.cartProducts{
+#productSum{
+    display: grid;
+    grid-template-columns: auto auto;
+}
+.cartProductsInfo{
     display: grid;
     grid-row-gap: 1em;
 }
+.cartproductsPrice{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    margin-top: 30px;
+}
 .cartProduct{
     display: grid;
-    grid-template-columns: .2fr .4fr;
+    grid-template-columns: .2fr .4fr .3fr;
 }
-.cartOrderInfo{
-    margin-top: 30px;
+/* table.editTable {
+    margin-top: 20px;
+    margin-bottom: 20px;
+} */
+.editProducts{
+    font-family: 'Open Sans', sans-serif;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
-.cartBtn{
-    margin-top: 30px;
+#addProducts{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.1em;
+    margin-bottom: 20px; 
+    margin-left: 10px; 
 }
- @media only screen and (max-width: 1300px) {
+.addproduct{
+    display: grid;
+    justify-content: center;
+    font-family: 'Open Sans', sans-serif;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.addProductForm{
+    display: grid;
+    justify-content: center;
+    grid-template-columns: auto;
+    background-color: #ffffffab;
+    border: 1px solid grey;
+    width: 300px;
+}
+.editProductForm{
+    display: grid;
+    justify-content: center;
+    grid-template-columns: auto;
+    background-color: #ffffffab;
+    border: 1px solid grey;
+    width: 200px;
+}
+.button{
+    width: 120px;
+    height: 30px;
+    background-color: #020a3a;
+    color: white;
+    border: none;
+}
+@media (max-width: 1199.98px) {
     h1{
         padding-top: 40px;
         padding-left: 50px;
@@ -432,7 +481,7 @@ footer > div > p > a{
     .categories{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        padding-left: 100px; 
+        grid-column-gap: 2em;
        
     }
     .bestSeller{
@@ -448,8 +497,11 @@ footer > div > p > a{
         height: 350px;
         padding-left: 100px;
     }
-    .register-form{
-        padding-left: 140px;
+    .pro-products{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .product-nav{
+        margin-left: 20px;
     }
     .register{
         margin-left: 10px;
@@ -463,10 +515,6 @@ footer > div > p > a{
         width: 600px;
         margin: 20px 0 30px 65px;
         padding-left: 0;
-    }
-    .login-form{
-        
-        padding-left: 200px;
     }
     .login{
         margin-top: 60px;
@@ -496,7 +544,127 @@ footer > div > p > a{
     }
   
 }
-@media only screen and (max-width: 770px) {
+@media (max-width: 991.98px){
+    header{
+        width: 100%;
+        height: 200px; 
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    h1{
+        padding-top: 60px;
+        font-size: 3em;
+    }
+    nav > ul{
+        display: grid;
+        grid-template-columns: repeat(2, 0.45fr);
+        padding-left: 25px;
+        width: auto;
+    }
+    .categories{
+        grid-template-columns: 1fr; 
+    }
+    .category > div > img{
+        width: 500px;
+        height: 500px;
+    }
+    .bestSeller{
+        height: 730px;
+        padding-left: 25px;
+    }    
+    .bsSeller{
+        grid-template-columns: auto auto;
+        grid-column-gap: 4em;
+    }
+    footer{
+        grid-template-columns: repeat(2, 0.5fr);
+        height: 350px;
+        padding-left: 100px;
+    }
+    .products{
+        display: grid;
+        grid-template-columns: 1fr;
+        padding-left: 20px;
+    }
+    .product-nav{
+        justify-content: left;
+        margin-left: 40px;
+        margin-bottom: 30px;
+    }
+    .productList > option{
+        font-size: .5em;
+    }
+    .pro-products{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .register-form{
+        padding-left: 0px;
+    }
+    .register{
+        margin-left: 10px;
+    }
+    .register input{
+        width: 580px;
+    }
+   
+    .login-form{
+        padding-left: 0px;
+        padding-bottom: 80px;
+    }
+    .login{
+        margin-top: 80px;
+        margin-left: 10px;
+    }
+    .login input{
+        width: 470px;
+    }
+    .dashboard{
+        margin: 150px 30px 280px 50px;
+    }
+    .dashboard div{
+        padding-left: 0px;
+        margin: 15px;
+    }
+    #dashboardHeading{
+        font-size: 1.8em;
+        margin-bottom: 20px;
+    }
+    .userShppoingCart {
+        
+        margin: 30px 0px 60px 20px;
+    }
+    .cartProduct{
+        grid-template-columns: auto auto auto;
+        grid-column-gap: .5em;
+    }
+   .cartOrderImg > img{
+    width: 100px;
+    height: 100px;
+   }
+   .cartproductsPrice{
+    grid-template-columns: auto;
+    grid-row-gap: 1em;
+    margin-top: 0;
+   }
+   .oneProduct{
+    grid-template-columns: auto;
+   }
+   .oneProductImg > img{
+       width: 250px;
+       height: 250px;
+   }
+   .oneProductInfo{
+       margin-top: 0;
+       margin-bottom: 20px;
+   }
+   #addProducts{
+    margin-left: 10px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+}
+@media (max-width: 770px) {
     header{
         width: 100%;
         height: 150px; 
@@ -515,18 +683,19 @@ footer > div > p > a{
         width: auto;
     }
     .categories{
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        padding-left: 30px; 
-       
+        grid-template-columns: 1fr; 
+    }
+    .category > div > img{
+        width: 550px;
+        height: 550px;
     }
     .bestSeller{
         height: 730px;
         padding-left: 25px;
     }    
     .bsSeller{
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: auto auto;
+        grid-column-gap: 4em;
     }
     footer{
         grid-template-columns: repeat(2, 0.5fr);
@@ -535,194 +704,86 @@ footer > div > p > a{
     }
     .products{
         display: grid;
-        grid-template-columns: 1fr 2fr;
+        grid-template-columns: 1fr;
         padding-left: 20px;
+    }
+    .product-nav{
+        justify-content: left;
+        margin-left: 40px;
+        margin-bottom: 30px;
+    }
+    .productList > option{
+        font-size: .5em;
     }
     .pro-products{
         display: grid;
         grid-template-columns: 1fr 1fr;
     }
     .register-form{
-        padding-left: 120px;
+        padding-left: 0px;
     }
     .register{
         margin-left: 10px;
-        width: 500px;
     }
     .register input{
-        width: 440px;
-    }
-    #reg-log{
-        width: 400px;
-        margin: 20px 0 30px 65px;
-        padding-left: 0;
+        width: 580px;
     }
     .login-form{
-        padding-left: 160px;
+        padding-left: 0px;
     }
     .login{
         margin-top: 60px;
         margin-left: 10px;
-        width: 430px;
     }
     .login input{
-        width: 350px;
-    }
-    #log-reg{
-        width: 400px;
-        margin: 20px 0 30px 35px;
-        padding-left: 0;
-    
+        width: 470px;
     }
     .dashboard{
-        margin: 100px 30px 100px 50px;
+        margin: 100px 30px 130px 50px;
     }
     .dashboard div{
         padding-left: 0px;
     }
+    #dashboardHeading{
+        font-size: 1.8em;
+        margin-bottom: 0px;
+    }
+    .userShppoingCart {
+        margin: 5px;
+    }
+    .cartProduct{
+        grid-template-columns: auto auto auto;
+        grid-column-gap: .5em;
+    }
+   .cartOrderImg > img{
+    width: 100px;
+    height: 100px;
+   }
+   .cartproductsPrice{
+    grid-template-columns: auto;
+    grid-row-gap: 1em;
+    margin-top: 0;
+   }
+   .oneProduct{
+    grid-template-columns: auto;
+   }
+   .oneProductImg > img{
+       width: 250px;
+       height: 250px;
+   }
+   .oneProductInfo{
+       margin-top: 0;
+       margin-bottom: 20px;
+   }
   
-}
-@media only screen and (max-width: 425px){
+} 
+
+@media (max-width: 575.98px){
     header{
         width: 100%;
         height: 130px; 
         display: grid;
-        grid-template-columns: 1fr 1fr;
-    }
-    h1{
-        padding-top: 40px;
-        padding-left: 15px;
-        font-size: 2.5em;
-    }
-    nav > ul{
-        display: grid;
-        grid-template-columns: .5fr .5fr;
-        padding-left: 25px;
-        padding-top: 0;
-        font-size: 1em;
-        width: auto;
-    }
-    .categories{
-        display: grid;
-        grid-template-columns: 1fr;
-        padding-left: 50px;
-    }
-    .bestSeller{
-        height: 1200px; 
-        padding-left: 80px;
-    } 
-    .bestSeller > p{
-        margin-left: 0;
-    }  
-    .bsSeller{
-        display: grid;
-        grid-template-columns: 1fr;
-        padding-left: 0;
-    }
-    footer{
-        grid-template-columns: repeat(2, 1fr);
-        height: 380px;
-        padding-left: 50px;
-    }
-    .products{
-        display: grid;
-        grid-template-columns: 1fr;
-        padding-left: 50px;
-    }
-    .product-nav{
-        margin-left: 0;
-    }
-    .pro-products{
-        display: grid;
-        grid-template-columns: auto;
-        padding:  30px 0px 30px 50px;
-    }
-    .register-form{
-        background-image: none;
-        padding-left: 50px;
-    }
-    .register{
-        margin-left: 10px;
-        width: 280px;
-    }
-    .register input{
-        width: 220px;
-    }
-    #reg-log{
-        width: 260px;
-        margin: 0 0 20px 25px;
-        padding-left: 0;
-    }
-    .login-form{
-        background-image: none;
-        padding-left: 50px;
-    }
-    .login{
-        margin: 60px 0px 20px 10px;
-        width: 280px;
-    }
-    .login input{
-        width: 220px;
-    }
-    #log-reg{
-        width: 260px;
-        margin: 0 0 20px 25px;
-        padding-left: 0;
-    }
-}
-@media only screen and (max-width: 375px){
-    .categories{
-        display: grid;
-        grid-template-columns: 1fr;
-        padding-left: 30px;
-    }
-    .bestSeller{
-        height: 1200px; 
-        padding-left: 60px;
-    } 
-    .register-form{
-        background-image: none;
-        padding-left: 30px;
-    }
-    .register{
-        margin-left: 10px;
-        width: 280px;
-    }
-    .register input{
-        width: 220px;
-    }
-    #reg-log{
-        width: 220px;
-        margin: 0 0 20px 45px;
-        padding-left: 0;
-    }
-    .login-form{
-        background-image: none;
-        padding-left: 30px;
-    }
-    .login{
-        margin: 60px 0px 20px 10px;
-        width: 280px;
-    }
-    .login input{
-        width: 220px;
-    }
-    #log-reg{
-        width: 220px;
-        margin: 0 0 20px 45px;
-        padding-left: 0;
-    }
-    .dashboard{
-        margin: 100px 30px 100px 40px;
-    }
-    
-}
-@media only screen and (max-width: 320px) {
-    header{
-        width: 100%;
-        height: 130px; 
-        display: grid;
-        grid-template-columns: .15fr 1fr;
+        grid-template-columns: .15fr fr;
     }
     h1{
         padding-top: 40px;
@@ -741,10 +802,14 @@ footer > div > p > a{
         display: grid;
         grid-template-columns: 1fr;
         padding-left: 0;
+    }
+    .category > div > img {
+        width: 300px;
+        height: 300px;
     }
     .bestSeller{
         height: 1200px;
-        padding-left: 30px;
+        
     } 
     .bestSeller > p{
         margin-left: 0;
@@ -757,7 +822,8 @@ footer > div > p > a{
     footer{
         grid-template-columns: repeat(2, 1fr);
         height: 380px;
-        padding-left: 50px;
+        padding-left: 40px;
+        margin-top: 40px;
     }
     .products{
         display: grid;
@@ -766,21 +832,31 @@ footer > div > p > a{
     }
     .product-nav{
         margin-left: 0;
+        margin-bottom: 40px;
+    }
+    .productList > option{
+        font-size: .4em;
     }
     .pro-products{
         display: grid;
         grid-template-columns: auto;
-        padding:  30px 0px 30px 10px;
+        padding: 0;
+      
     }
     .register-form{
         background-image: none;
         padding-left: 0;
     }
     .register{
-        margin-left: 10px;
-        width: 280px;
+        margin-left: 0;
+        width: 300px;
+        box-shadow: none;
     }
-    .register input{
+    .register > input{
+        width: 240px;
+        margin-left: 15px;
+    }
+    #submitbtn {
         width: 220px;
     }
     #reg-log{
@@ -796,8 +872,12 @@ footer > div > p > a{
     .login{
         margin: 60px 0px 20px 10px;
         width: 280px;
+        box-shadow: none;
     }
-    .login input{
+    .login input {
+        width: 220px;
+    }
+    #loginbtn {
         width: 220px;
     }
     #log-reg{
@@ -806,18 +886,36 @@ footer > div > p > a{
         padding-left: 0;
     }
     #dashboardHeading{
+        font-size: 1.8em;
         margin-bottom: 0px;
     }
-   
+    .dashboard{
+        margin: 10px 0px 0 20px;
+    }
+    .userShppoingCart {
+        margin: 5px;
+    }
+    .cartProduct{
+        grid-template-columns: auto auto auto;
+        grid-column-gap: .5em;
+    }
+   .cartOrderImg > img{
+    width: 100px;
+    height: 100px;
+   }
+   .cartproductsPrice{
+    grid-template-columns: auto;
+    grid-row-gap: 1em;
+    margin-top: 0;
+   }
+   .oneProduct{
+    grid-template-columns: auto;
+   }
+   .oneProductImg > img{
+       width: 250px;
+       height: 250px;
+   }
+   .oneProductInfo{
+       margin-top: 0;
+   }
 } 
-
-/* @media (max-width: 575.98px) { ... }
-
-// Small devices (landscape phones, less than 768px)
-@media (max-width: 767.98px) { ... }
-
-// Medium devices (tablets, less than 992px)
-@media (max-width: 991.98px) { ... }
-
-// Large devices (desktops, less than 1200px)
-@media (max-width: 1199.98px) { ... } */
