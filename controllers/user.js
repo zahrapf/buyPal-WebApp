@@ -39,7 +39,7 @@ router.post("/registration", (req,res)=>{
 
     if(req.body.email==="" || req.body.email===null || req.body.email.length===0){
         emailError.push("Enter your Email");
-    }else if(!(/^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$/.test(req.body.email))){
+    }else if(!(/^[\dA-Za-z!@#$%^&*(),.?":{}|<>_-]+[@][\dA-Za-z]+[.][\dA-Za-z.]*[a-z]$/.test(req.body.email))){
         emailError.push("Enter a valid Email address")
     }
 
